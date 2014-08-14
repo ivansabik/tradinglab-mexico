@@ -7,6 +7,8 @@ empresas = list(empresas['clave_yahoo'].values)
 
 print empresas
 
+datos_consolidados = pd.DataFrame()
+
 for empresa in empresas:
     if(empresa != 'NONEXISTUM.NA'):
         datos = pd.io.data.get_data_yahoo(empresa, 
@@ -14,3 +16,7 @@ for empresa in empresas:
                                          end=datetime.datetime(2012, 1, 1))
         print empresa
         print datos.head()
+        datos_consolidados.append(datos)
+        datos.to_csv('./csv/' + empresa + '.csv')
+print datos.head()
+
