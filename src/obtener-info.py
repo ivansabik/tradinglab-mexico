@@ -12,8 +12,8 @@ datos_consolidados = pd.DataFrame()
 for empresa in empresas:
     if(empresa != 'NONEXISTUM.NA'):
         datos = pd.io.data.get_data_yahoo(empresa, 
-                                         start=datetime.datetime(2006, 10, 1), 
-                                         end=datetime.datetime(2012, 1, 1))
+                                         start=datetime.datetime(1990, 1, 1), 
+                                         end=datetime.datetime(2015, 1, 1))
         datos['clave_empresa'] = empresa
         print empresa
         print datos.head()
