@@ -14,9 +14,11 @@ for empresa in empresas:
         datos = pd.io.data.get_data_yahoo(empresa, 
                                          start=datetime.datetime(2006, 10, 1), 
                                          end=datetime.datetime(2012, 1, 1))
+        datos['clave_empresa'] = empresa
         print empresa
         print datos.head()
-        datos_consolidados.append(datos)
+        datos_consolidados = datos_consolidados.append(datos)
         datos.to_csv('./csv/' + empresa + '.csv')
-print datos.head()
+print datos_consolidados.head()
+datos_consolidados.to_csv('./historicos-bmv.csv')
 
