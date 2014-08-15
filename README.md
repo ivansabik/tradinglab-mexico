@@ -18,7 +18,11 @@ http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=US&lang=en-U
 
 http://nbviewer.ipython.org/github/mandroslabs/tradinglabmx/tree/master/notebook/
 
-##### Comisiones
+##### Comisiones trading aplicables MX
 
 http://hablemosdefinanzas.wordpress.com/2011/06/06/invirtiendo-sin-asesores-el-caso-de-accitrade-y-bursanet/
+
+##### Charteo
+
+http://www.highcharts.com/stock/demo
 
