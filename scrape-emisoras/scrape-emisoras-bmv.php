@@ -26,7 +26,7 @@ for($i = 5; $i < count($html_emisoras) - 1; $i += 2) {
     $nombre = $html_emisoras[$i+1]->plaintext;
     $clave_interna = preg_match('/[0-9]{4}/', $html_emisoras[$i]->first_child()->onclick, $resregex);
     $clave_interna = $resregex[0];
-    $emisoras[] = array('clave' => $clave, 'nombre' => $nombre, 'clave_interna' => $clave_interna);
+    $emisoras[] = array('clave' => $clave, 'nombre' => $nombre, 'clave_interna' => $clave_interna, 'logo' => 'logos/' . $clave . '.gif');
     $url = 'http://www.bmv.com.mx/img-bmv/GRA/logosemis/' . $clave_interna . '.gif';
     $img = 'logos/' . $clave . '.gif';
     file_put_contents($img, file_get_contents($url));
