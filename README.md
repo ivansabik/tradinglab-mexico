@@ -3,9 +3,9 @@ Tradinglab mx
 
 Laboratorio de trading
 
-- Serie de tiempo IPC
-- Noticias de la empresa por ticker
-- Serie de tiempo de la empresa por ticker
+- Serie de tiempo IPC 
+- Noticias actuales de la empresa por ticker
+- Serie de tiempo de la empresa por ticker con eventos (noticias)
 - Consulta de retornos entre dos fechas de la empresa por ticker
 
 ##### RSS feed Noticias
@@ -13,6 +13,8 @@ Laboratorio de trading
 http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=MX&lang=es-MX
 
 http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=US&lang=en-US
+
+http://www.reuters.com/finance/stocks/companyNews?symbol=WALMEXV.MX&date=01082014
 
 ##### Notebook
 
@@ -25,4 +27,3 @@ http://hablemosdefinanzas.wordpress.com/2011/06/06/invirtiendo-sin-asesores-el-c
 ##### Charteo
 
 http://www.highcharts.com/stock/demo
-
