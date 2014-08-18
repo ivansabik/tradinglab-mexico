@@ -1,4 +1,6 @@
 *~
+scrape-emisoras/vendor/
+composer.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,0 +1,662 @@
+[
+  {
+    "clave":"AC",
+    "clave_yahoo":"AC.MX",
+    "nombre":"ARCA CONTINENTAL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ACCELSA",
+    "clave_yahoo":"ACCELSAB.MX",
+    "nombre":"ACCEL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ACTINVR",
+    "clave_yahoo":"ACTINVRB.MX",
+    "nombre":"CORPORACION ACTINVER, S.A.B. DE C.V."
+  },
+  {
+    "clave":"AEROMEX",
+    "clave_yahoo":"AEROMEX.MX",
+    "nombre":"GRUPO AEROMÉXICO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"AHMSA",
+    "clave_yahoo":"AHMSA.MX",
+    "nombre":"ALTOS HORNOS DE MEXICO, S.A. DE C.V."
+  },
+  {
+    "clave":"ALFA",
+    "clave_yahoo":"ALFAA.MX",
+    "nombre":"ALFA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ALSEA",
+    "clave_yahoo":"ALSEA.MX",
+    "nombre":"ALSEA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"AMX",
+    "clave_yahoo":"AMXA.MX",
+    "nombre":"AMERICA MOVIL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ARA",
+    "clave_yahoo":"ARA.MX",
+    "nombre":"CONSORCIO ARA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ARISTOS",
+    "clave_yahoo":"ARISTOSA.MX",
+    "nombre":"CONSORCIO ARISTOS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ASUR",
+    "clave_yahoo":"ASURB.MX",
+    "nombre":"GRUPO AEROPORTUARIO DEL SURESTE, S.A.B. DE C.V."
+  },
+  {
+    "clave":"AUTLAN",
+    "clave_yahoo":"AUTLANB.MX",
+    "nombre":"COMPAÑIA MINERA AUTLAN, S.A.B. DE C. V."
+  },
+  {
+    "clave":"AXTEL",
+    "clave_yahoo":"AXTELCPO.MX",
+    "nombre":"AXTEL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"AZTECA",
+    "clave_yahoo":"AZTECACPO.MX",
+    "nombre":"TV AZTECA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"BACHOCO",
+    "clave_yahoo":"BACHOCOB.MX",
+    "nombre":"INDUSTRIAS BACHOCO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"BAFAR",
+    "clave_yahoo":"BAFARB.MX",
+    "nombre":"GRUPO BAFAR, S.A.B. DE C.V."
+  },
+  {
+    "clave":"BBVA",
+    "clave_yahoo":"BBVA.MX",
+    "nombre":"BANCO BILBAO VIZCAYA ARGENTARIA, S.A."
+  },
+  {
+    "clave":"BEVIDES",
+    "clave_yahoo":"BEVIDESB.MX",
+    "nombre":"FARMACIAS BENAVIDES, S.A.B. DE C.V."
+  },
+  {
+    "clave":"BIMBO",
+    "clave_yahoo":"BIMBOA.MX",
+    "nombre":"GRUPO BIMBO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"BOLSA",
+    "clave_yahoo":"BOLSAA.MX",
+    "nombre":"BOLSA MEXICANA DE VALORES, S.A.B. DE C.V."
+  },
+  {
+    "clave":"C",
+    "clave_yahoo":"C.MX",
+    "nombre":"CITIGROUP INC."
+  },
+  {
+    "clave":"CABLE",
+    "clave_yahoo":"CABLECPO.MX",
+    "nombre":"EMPRESAS CABLEVISION, S.A. DE C.V."
+  },
+  {
+    "clave":"CEMEX",
+    "clave_yahoo":"CEMEXCPO.MX",
+    "nombre":"CEMEX, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CERAMIC",
+    "clave_yahoo":"CERAMICB.MX",
+    "nombre":"INTERNACIONAL DE CERAMICA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CHDRAUI",
+    "clave_yahoo":"CHDRAUIB.MX",
+    "nombre":"GRUPO COMERCIAL CHEDRAUI, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CIDMEGA",
+    "clave_yahoo":"CIDMEGA.MX",
+    "nombre":"GRUPE, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CIE",
+    "clave_yahoo":"CIEB.MX",
+    "nombre":"CORPORACION INTERAMERICANA DE ENTRETENIMIENTO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CMOCTEZ",
+    "clave_yahoo":"CMOCTEZ.MX",
+    "nombre":"CORPORACION MOCTEZUMA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CMR",
+    "clave_yahoo":"CMRB.MX",
+    "nombre":"CMR, S.A.B. DE C.V."
+  },
+  {
+    "clave":"COLLADO",
+    "clave_yahoo":"COLLADO.MX",
+    "nombre":"G COLLADO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"COMERCI",
+    "clave_yahoo":"COMERCIUBC.MX",
+    "nombre":"CONTROLADORA COMERCIAL MEXICANA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CONVER",
+    "clave_yahoo":"CONVERA.MX",
+    "nombre":"CONVERTIDORA INDUSTRIAL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"CULTIBA",
+    "clave_yahoo":"CULTIBAB.MX",
+    "nombre":"ORGANIZACIÓN CULTIBA, S.A.B. DE CV"
+  },
+  {
+    "clave":"CYDSASA",
+    "clave_yahoo":"CYDSASAA.MX",
+    "nombre":"CYDSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"DINE",
+    "clave_yahoo":"DINEB.MX",
+    "nombre":"DINE, S.A.B. DE C.V."
+  },
+  {
+    "clave":"EDOARDO",
+    "clave_yahoo":"EDOARDOB.MX",
+    "nombre":"EDOARDOS MARTIN, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ELEKTRA",
+    "clave_yahoo":"ELEKTRA.MX",
+    "nombre":"GRUPO ELEKTRA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"FEMSA",
+    "clave_yahoo":"FEMSAUBD.MX",
+    "nombre":"FOMENTO ECONÓMICO MEXICANO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"FINAMEX",
+    "clave_yahoo":"FINAMEXO.MX",
+    "nombre":"CASA DE BOLSA FINAMEX, S.A.B. DE C.V."
+  },
+  {
+    "clave":"FINDEP",
+    "clave_yahoo":"FINDEP.MX",
+    "nombre":"FINANCIERA INDEPENDENCIA, S.A.B. DE C.V. SOFOM, E.N.R."
+  },
+  {
+    "clave":"FRAGUA",
+    "clave_yahoo":"FRAGUAB.MX",
+    "nombre":"CORPORATIVO FRAGUA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"FRES",
+    "clave_yahoo":"FRES.MX",
+    "nombre":"FRESNILLO PLC"
+  },
+  {
+    "clave":"GAP",
+    "clave_yahoo":"GAPB.MX",
+    "nombre":"GRUPO AEROPORTUARIO DEL PACIFICO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GBM",
+    "clave_yahoo":"GBMO.MX",
+    "nombre":"CORPORATIVO GBM, S.A.B. DE C. V."
+  },
+  {
+    "clave":"GCARSO",
+    "clave_yahoo":"GCARSOA1.MX",
+    "nombre":"GRUPO CARSO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GCC",
+    "clave_yahoo":"GCC.MX",
+    "nombre":"GRUPO CEMENTOS DE CHIHUAHUA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GENSEG",
+    "clave_yahoo":"GENSEG.MX",
+    "nombre":"GENERAL DE SEGUROS, S.A.B."
+  },
+  {
+    "clave":"GENTERA",
+    "clave_yahoo":"GENTERA.MX",
+    "nombre":"COMPARTAMOS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GEO",
+    "clave_yahoo":"GEOB.MX",
+    "nombre":"CORPORACION GEO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GFAMSA",
+    "clave_yahoo":"GFAMSAA.MX",
+    "nombre":"GRUPO FAMSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GFINBUR",
+    "clave_yahoo":"GFINBURO.MX",
+    "nombre":"GRUPO FINANCIERO INBURSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GFINTER",
+    "clave_yahoo":"GFINTERO.MX",
+    "nombre":"GRUPO FINANCIERO INTERACCIONES, S.A. DE C.V."
+  },
+  {
+    "clave":"GFMULTI",
+    "clave_yahoo":"GFMULTIO.MX",
+    "nombre":"GRUPO FINANCIERO MULTIVA S.A.B. DE C.V."
+  },
+  {
+    "clave":"GFNORTE",
+    "clave_yahoo":"GFNORTEO.MX",
+    "nombre":"GRUPO FINANCIERO BANORTE, S.A.B DE C.V."
+  },
+  {
+    "clave":"GFREGIO",
+    "clave_yahoo":"GFREGIOO.MX",
+    "nombre":"BANREGIO GRUPO FINANCIERO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GIGANTE",
+    "clave_yahoo":"GIGANTE.MX",
+    "nombre":"GRUPO GIGANTE, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GISSA",
+    "clave_yahoo":"GISSAA.MX",
+    "nombre":"GRUPO INDUSTRIAL SALTILLO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GMACMA",
+    "clave_yahoo":"GMACMAB.MX",
+    "nombre":"GRUPO MAC MA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GMD",
+    "clave_yahoo":"GMD.MX",
+    "nombre":"GRUPO MEXICANO DE DESARROLLO, S.A.B."
+  },
+  {
+    "clave":"GMEXICO",
+    "clave_yahoo":"GMEXICOB.MX",
+    "nombre":"GRUPO MEXICO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GMODELO",
+    "clave_yahoo":"GMODELOC.MX",
+    "nombre":"GRUPO MODELO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GNP",
+    "clave_yahoo":"GNP.MX",
+    "nombre":"GRUPO NACIONAL PROVINCIAL, S.A.B."
+  },
+  {
+    "clave":"GOMO",
+    "clave_yahoo":"GOMO.MX",
+    "nombre":"GRUPO COMERCIAL GOMO, S.A. DE C.V."
+  },
+  {
+    "clave":"GPH",
+    "clave_yahoo":"GPH1.MX",
+    "nombre":"GRUPO PALACIO DE HIERRO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GPROFUT",
+    "clave_yahoo":"GPROFUT.MX",
+    "nombre":"GRUPO PROFUTURO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GRUMA",
+    "clave_yahoo":"GRUMAB.MX",
+    "nombre":"GRUMA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"GSANBOR",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"GRUPO SANBORNS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"HCITY",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"HOTELES CITY EXPRESS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"HERDEZ",
+    "clave_yahoo":"HERDEZ.MX",
+    "nombre":"GRUPO HERDEZ, S.A.B. DE C.V."
+  },
+  {
+    "clave":"HILASAL",
+    "clave_yahoo":"HILASALA.MX",
+    "nombre":"HILASAL MEXICANA S.A.B. DE C.V."
+  },
+  {
+    "clave":"HOGAR",
+    "clave_yahoo":"HOGARB.MX",
+    "nombre":"CONSORCIO HOGAR, S.A.B. DE C.V."
+  },
+  {
+    "clave":"HOMEX",
+    "clave_yahoo":"HOMEX.MX",
+    "nombre":"DESARROLLADORA HOMEX, S.A.B. DE C.V."
+  },
+  {
+    "clave":"IASASA",
+    "clave_yahoo":"IASASA.MX",
+    "nombre":"INDUSTRIA AUTOMOTRIZ, S.A. DE C.V."
+  },
+  {
+    "clave":"ICA",
+    "clave_yahoo":"ICA.MX",
+    "nombre":"EMPRESAS ICA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"ICH",
+    "clave_yahoo":"ICHB.MX",
+    "nombre":"INDUSTRIAS CH, S.A.B. DE C.V."
+  },
+  {
+    "clave":"IDEAL",
+    "clave_yahoo":"IDEALB-1.MX",
+    "nombre":"IMPULSORA DEL DESARROLLO Y EL EMPLEO EN AMERICA LATINA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"IENOVA",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"INFRAESTRUCTURA ENERGETICA NOVA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"INCARSO",
+    "clave_yahoo":"INCARSOB-1.MX",
+    "nombre":"Inmuebles Carso, S.A.B. de C.V."
+  },
+  {
+    "clave":"INVEX",
+    "clave_yahoo":"INVEXA.MX",
+    "nombre":"INVEX CONTROLADORA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"KIMBER",
+    "clave_yahoo":"KIMBERA.MX",
+    "nombre":"KIMBERLY - CLARK DE MEXICO S.A.B. DE C.V."
+  },
+  {
+    "clave":"KOF",
+    "clave_yahoo":"KOFL.MX",
+    "nombre":"COCA-COLA FEMSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"KUO",
+    "clave_yahoo":"KUOB.MX",
+    "nombre":"GRUPO KUO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"LAB",
+    "clave_yahoo":"LABB.MX",
+    "nombre":"GENOMMA LAB INTERNACIONAL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"LALA",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"GRUPO LALA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"LAMOSA",
+    "clave_yahoo":"LAMOSA.MX",
+    "nombre":"GRUPO LAMOSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"LASEG",
+    "clave_yahoo":"LASEG.MX",
+    "nombre":"LA LATINOAMERICANA SEGUROS, S.A."
+  },
+  {
+    "clave":"LIVEPOL",
+    "clave_yahoo":"LIVEPOLC-1.MX",
+    "nombre":"EL PUERTO DE LIVERPOOL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MASECA",
+    "clave_yahoo":"MASECAB.MX",
+    "nombre":"GRUPO INDUSTRIAL MASECA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MAXCOM",
+    "clave_yahoo":"MAXCOMCPO.MX",
+    "nombre":"MAXCOM TELECOMUNICACIONES, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MEDICA",
+    "clave_yahoo":"MEDICAB.MX",
+    "nombre":"MEDICA SUR, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MEGA",
+    "clave_yahoo":"MEGACPO.MX",
+    "nombre":"MEGACABLE HOLDINGS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MEXCHEM",
+    "clave_yahoo":"MEXCHEM.MX",
+    "nombre":"MEXICHEM, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MFRISCO",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"MINERA FRISCO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MINSA",
+    "clave_yahoo":"MINSAB.MX",
+    "nombre":"GRUPO MINSA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"MONEX",
+    "clave_yahoo":"MONEXB.MX",
+    "nombre":"HOLDING MONEX, S.A.B. DE C.V."
+  },
+  {
+    "clave":"OHLMEX",
+    "clave_yahoo":"OHLMEX.MX",
+    "nombre":"OHL MEXICO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"OMA",
+    "clave_yahoo":"OMAB.MX",
+    "nombre":"GRUPO AEROPORTUARIO DEL CENTRO NORTE, S.A.B. DE C.V."
+  },
+  {
+    "clave":"PAPPEL",
+    "clave_yahoo":"PAPPEL.MX",
+    "nombre":"BIO PAPPEL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"PASA",
+    "clave_yahoo":"PASAB.MX",
+    "nombre":"PROMOTORA AMBIENTAL, S.A.B. DE C.V."
+  },
+  {
+    "clave":"PE&OLES",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"INDUSTRIAS PEÑOLES, S. A.B. DE C. V."
+  },
+  {
+    "clave":"PINFRA",
+    "clave_yahoo":"PINFRA.MX",
+    "nombre":"PROMOTORA Y OPERADORA DE INFRAESTRUCTURA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"POCHTEC",
+    "clave_yahoo":"POCHTECB.MX",
+    "nombre":"GRUPO POCHTECA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"POSADAS",
+    "clave_yahoo":"POSADASA.MX",
+    "nombre":"GRUPO POSADAS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"PROCORP",
+    "clave_yahoo":"PROCORPB.MX",
+    "nombre":"PROCORP, S.A. DE C.V., SOCIEDAD DE INV. DE CAPITAL DE RIESGO"
+  },
+  {
+    "clave":"PV",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"PEÑA VERDE S.A.B."
+  },
+  {
+    "clave":"QBINDUS",
+    "clave_yahoo":"QBINDUSA.MX",
+    "nombre":"Q.B. INDUSTRIAS, S.A. DE C.V."
+  },
+  {
+    "clave":"QC",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"QUÁLITAS CONTROLADORA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"QUMMA",
+    "clave_yahoo":"QUMMAB.MX",
+    "nombre":"GRUPO QUMMA, S.A. DE C.V."
+  },
+  {
+    "clave":"RCENTRO",
+    "clave_yahoo":"RCENTROA.MX",
+    "nombre":"GRUPO RADIO CENTRO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"REALTUR",
+    "clave_yahoo":"REALTURA.MX",
+    "nombre":"REAL TURISMO S.A. DE C.V."
+  },
+  {
+    "clave":"SAB",
+    "clave_yahoo":"SAB.MX",
+    "nombre":"GRUPO CASA SABA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"SAN",
+    "clave_yahoo":"SANMEXB.MX",
+    "nombre":"BANCO SANTANDER, S.A."
+  },
+  {
+    "clave":"SANLUIS",
+    "clave_yahoo":"SANLUISA.MX",
+    "nombre":"SANLUIS CORPORACION, S.A.B. DE C. V."
+  },
+  {
+    "clave":"SANMEX",
+    "clave_yahoo":"SANMEXB.MX",
+    "nombre":"GRUPO FINANCIERO SANTANDER MEXICO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"SARE",
+    "clave_yahoo":"SAREB.MX",
+    "nombre":"SARE HOLDING, S.A.B. DE C.V."
+  },
+  {
+    "clave":"SAVIA",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"SAVIA, S.A. DE C.V."
+  },
+  {
+    "clave":"SIMEC",
+    "clave_yahoo":"SIMECB.MX",
+    "nombre":"GRUPO SIMEC, S.A.B. DE C.V."
+  },
+  {
+    "clave":"SORIANA",
+    "clave_yahoo":"SORIANAB.MX",
+    "nombre":"ORGANIZACION SORIANA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"SPORT",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"GRUPO SPORTS WORLD, S.A.B. DE C.V."
+  },
+  {
+    "clave":"TEAK",
+    "clave_yahoo":"TEAKCPO.MX",
+    "nombre":"PROTEAK UNO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"TEKCHEM",
+    "clave_yahoo":"TEKCHEMA.MX",
+    "nombre":"TEKCHEM, S.A.B. DE C.V."
+  },
+  {
+    "clave":"TERRA",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"THE BANK OF NEW YORK MELLON, S.A., INSTITUCIÓN DE BANCA MÚLTIPLE"
+  },
+  {
+    "clave":"TLEVISA",
+    "clave_yahoo":"TLEVISACPO.MX",
+    "nombre":"GRUPO TELEVISA, S.A.B."
+  },
+  {
+    "clave":"TMM",
+    "clave_yahoo":"TMMA.MX",
+    "nombre":"GRUPO TMM, S.A."
+  },
+  {
+    "clave":"TS",
+    "clave_yahoo":"TS.MX",
+    "nombre":"TENARIS S.A."
+  },
+  {
+    "clave":"URBI",
+    "clave_yahoo":"URBI.MX",
+    "nombre":"URBI DESARROLLOS URBANOS, S.A.B. DE C.V."
+  },
+  {
+    "clave":"VALUEGF",
+    "clave_yahoo":"VALUEGFO.MX",
+    "nombre":"VALUE GRUPO FINANCIERO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"VASCONI",
+    "clave_yahoo":"VASCONI.MX",
+    "nombre":"GRUPO VASCONIA S.A.B."
+  },
+  {
+    "clave":"VESTA",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"CORPORACIÓN INMOBILIARIA VESTA, S.A.B. DE C.V."
+  },
+  {
+    "clave":"VITRO",
+    "clave_yahoo":"VITROA.MX",
+    "nombre":"VITRO, S.A.B. DE C.V."
+  },
+  {
+    "clave":"VOLAR",
+    "clave_yahoo":"NONEXISTUM.NA",
+    "nombre":"CONTROLADORA VUELA COMPAÑÍA DE AVIACIÓN, S.A.B. DE C.V."
+  },
+  {
+    "clave":"WALMEX",
+    "clave_yahoo":"WALMEXV.MX",
+    "nombre":"WAL - MART DE MEXICO, S.A.B. DE C.V."
+  }
+]

@@ -1,5 +1,12 @@
 {
     "require": {
-        "sunra/php-simple-html-dom-parser": "dev-master"
-    }
+        "ivansabik/dom-hunter": "dev-master",
+        "camspiers/json-pretty": "1.0.*"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ivansabik/dom-hunter"
+        }
+    ]
 }
