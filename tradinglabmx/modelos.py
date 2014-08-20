@@ -10,16 +10,16 @@ class Emisora:
 		emisoras = []
 		for emisora_json in emisoras_json:
 			emisora = Emisora()
-			clave  = emisora_json['clave']
-			nombre = emisora_json['nombre']
-			clave_yahoo = emisora_json['clave_yahoo']
-			clave_bloomberg = emisora_json['clave_bloomberg']
-			#fecha_constitucion = emisora_json['fecha_constitucion']
-			#fecha_listado = emisora_json['fecha_listado']
-			#sector = emisora_json['sector']
-			#subsector = emisora_json['subsector']
-			#ramo = emisora_json['ramo']
-			#subramo = emisora_json['subramo']
+			clave  = emisora_json.get('clave', '')
+			nombre = emisora_json.get('nombre', '')
+			clave_yahoo = emisora_json.get('clave_yahoo', '')
+			clave_bloomberg = emisora_json.get('clave_bloomberg', '')
+			fecha_constitucion = emisora_json.get('fecha_constitucion', '')
+			fecha_listado = emisora_json.get('fecha_listado', '')
+			sector = emisora_json.get('sector', '')
+			subsector = emisora_json.get('subsector', '')
+			ramo = emisora_json.get('ramo', '')
+			subramo = emisora_json.get('subramo', '')
 			emisoras.append(emisora)
 		return emisoras
 
