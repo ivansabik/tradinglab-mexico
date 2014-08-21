@@ -8,6 +8,7 @@ class Emisora:
 		return ''
 
 	# La clase esta pensada para la API, por default regresa como dict
+	# TODO: renombrar a todas_json y devolver directo el JSON leido
 	def todas(self, as_dict = True):
 		json_data = open('emisoras.json')
 		emisoras_json = json.load(json_data)
