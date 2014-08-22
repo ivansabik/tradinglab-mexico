@@ -32,7 +32,7 @@ def api_emisora():
         return jsonify(emisora.buscar(clave))
     else:
         error = {'error': 'Falta el parametro "clave" con el ticker de la emisora'}
-            return jsonify(error)
+        return jsonify(error)
 
 if __name__== '__main__':
     app.run(debug=True)
