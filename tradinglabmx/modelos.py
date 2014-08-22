@@ -1,55 +1,36 @@
 import json
+import datetime
+import pandas as pd
+import pandas.io.data
 
 # Emisora
 class Emisora:
-	
-	def busca(self, clave = 'BMV'):
-		# hier kommt was
-		return ''
-
-	# La clase esta pensada para la API, por default regresa como dict
-	# TODO: renombrar a todas_json y devolver directo el JSON leido
-	def todas(self, as_dict = True):
-		json_data = open('emisoras.json')
-		emisoras_json = json.load(json_data)
-		emisoras = []
-		for emisora_json in emisoras_json:
-			clave  = emisora_json.get('clave', '')
-			nombre = emisora_json.get('nombre', '')
-			clave_yahoo = emisora_json.get('clave_yahoo', '')
-			clave_bloomberg = emisora_json.get('clave_bloomberg', '')
-			fecha_constitucion = emisora_json.get('fecha_constitucion', '')
-			fecha_listado = emisora_json.get('fecha_listado', '')
-			sector = emisora_json.get('sector', '')
-			subsector = emisora_json.get('subsector', '')
-			ramo = emisora_json.get('ramo', '')
-			subramo = emisora_json.get('subramo', '')
-			if as_dict:
-				emisora = {
-					'clave': clave,
-					'nombre': nombre,
-					'clave_yahoo': clave_yahoo,
-					'clave_bloomberg': clave_bloomberg,
-					'fecha_constitucion': fecha_constitucion,
-					'fecha_listado': fecha_listado,
-					'sector': sector,
-					'subsector': subsector,
-					'ramo': ramo,
-					'subramo': subramo
-				}
-			else:
-				emisora = Emisora()
-				# Aqui va algo si se quiere como objeto (no dict)
-			emisoras.append(emisora)
-		return emisoras
-		
-	def info_historica(self, fecha_inicio = '', fecha_fin = ''):
-		# hier kommt was
-		return ''
+    # TODO: manejo de fechas
+    def buscar(self, clave, fecha_inicio = '', fecha_fin = ''):
+        json_data = open('emisoras.json')
+        emisoras_json = json.load(json_data)
+        for emisora_json in emisoras_json:
+            clave_json  = emisora_json.get('clave', '')
+            clave_yahoo  = emisora_json.get('clave_yahoo', '')
+            if clave == clave_json:
+                # Busca info de yahoo
+                if(clave_yahoo != ''):
+                    datos = pd.io.data.get_data_yahoo(clave_yahoo, 
+                                    start = datetime.datetime(1990, 1, 1), 
+                                    end = datetime.datetime(2015, 1, 1))
+                    datos_json = json.loads(datos.to_json(date_format = 'iso'))
+                    emisora_json['info_historica'] = datos_json
+                return emisora_json
+        return {'resultado': 'No existe ninguna emisora con esa clave'}
+        
+    def todas_json(self):
+        json_data = open('emisoras.json')
+        emisoras_json = json.load(json_data)
+        return emisoras_json
 
 # Movimiento de trading
 class MovimientoTrading:
-	is_compra = ''
-	num_acciones = ''
-	emisora = ''
-	fecha = ''
+    is_compra = ''
+    num_acciones = ''
+    emisora = ''
+    fecha = ''
