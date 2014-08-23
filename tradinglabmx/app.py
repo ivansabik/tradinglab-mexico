@@ -6,7 +6,10 @@ app = Flask(__name__)
 # Endpoints html
 @app.route('/')
 def emisoras():
-    return render_template('emisoras.html')
+    emisora = Emisora()
+    emisoras = emisora.todas_json()
+    print emisoras
+    return render_template('emisoras.html', emisoras = emisoras)
     
 @app.route('/emisora')
 def emisora():
@@ -23,7 +26,6 @@ def api_emisoras():
     emisoras = emisora.todas_json()
     return jsonify(lista_emisoras = emisoras)
     
-# TODO: leer clave del get
 @app.route('/api/emisora')
 def api_emisora():
     if 'clave' in request.args:

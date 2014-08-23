@@ -17,6 +17,7 @@ class Emisora:
                 if(clave_yahoo != ''):
                     datos = pd.io.data.get_data_yahoo(clave_yahoo, 
                                     start = datetime.datetime(1990, 1, 1), 
+                                    # TODO: Fecha actual
                                     end = datetime.datetime(2015, 1, 1))
                     datos_json = json.loads(datos.to_json(date_format = 'iso'))
                     emisora_json['info_historica'] = datos_json
