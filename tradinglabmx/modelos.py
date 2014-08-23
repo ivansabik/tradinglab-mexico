@@ -5,7 +5,6 @@ import pandas.io.data
 
 # Emisora
 class Emisora:
-    # TODO: manejo de fechas
     def buscar(self, clave, fecha_inicio = '', fecha_fin = ''):
         json_data = open('emisoras.json')
         emisoras_json = json.load(json_data)

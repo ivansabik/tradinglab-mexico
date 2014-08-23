@@ -8,6 +8,11 @@ Laboratorio de trading
 - Serie de tiempo de la empresa por ticker con eventos (noticias)
 - Consulta de retornos entre dos fechas de la empresa por ticker
 
+Python, Flask, Zipline
+
+- App ```app.py```
+- API ```api.py```
+
 ##### RSS feed Noticias
 
 http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=MX&lang=es-MX
