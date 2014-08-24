@@ -18,6 +18,12 @@ class Emisora:
                                     start = datetime.datetime(1990, 1, 1), 
                                     # TODO: Fecha actual
                                     end = datetime.datetime(2015, 1, 1))
+                    datos.rename(columns={"Open": "open"}, inplace=True)
+                    datos.rename(columns={"High": "high"}, inplace=True)
+                    datos.rename(columns={"Low": "low"}, inplace=True)
+                    datos.rename(columns={"Close": "close"}, inplace=True)
+                    datos.rename(columns={"Volume": "volume"}, inplace=True)
+                    datos.rename(columns={"Adj Close": "adj_close"}, inplace=True)
                     datos_json = json.loads(datos.to_json(date_format = 'iso'))
                     emisora_json['info_historica'] = datos_json
                 return emisora_json

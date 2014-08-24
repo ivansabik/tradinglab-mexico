@@ -1,56 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Tradinglab MX</title>
-		<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-	</head>
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url_for('index') }}">Tradinglab MX</a>
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="page-header">Emisoras</h1>
+    <div class="row placeholders">
+        {% for emisora in emisoras %}
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{{ url_for('emisora', clave = emisora.clave) }}">
+                <img class="img-responsive" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename = emisora.logo) }}"/>
+			</a>
+            <h4>{{ emisora.clave }}</h4>
+			 <h6>{{ emisora.nombre }}</h6>
+			 <span class="text-muted">Sector: {{ emisora.sector }}</span>
+			 </br>
+			 <span class="text-muted">Subsector: {{ emisora.subsector }}</span>
         </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Buscar ticker...">
-          </form>
-        </div>
-      </div>
+		{% endfor %}
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="{{ url_for('emisoras') }}">Emisoras</a></li>
-            <li><a href="#">Indicadores globales</a></li>
-            <li><a href="#">Construir estrategia</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Emisoras</h1>
-          <div class="row placeholders">
-			  {% for emisora in emisoras %}
-			  <div class="col-xs-6 col-sm-3 placeholder">
-				  <a href="{{ url_for('emisora', clave = emisora.clave) }}">
-					  <img class="img-responsive" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename = emisora.logo) }}"/>
-				  </a>
-				  <h4>{{ emisora.clave }}</h4>
-				  <h6>{{ emisora.nombre }}</h6>
-				  <span class="text-muted">Sector: {{ emisora.sector }}</span>
-				  </br>
-				  <span class="text-muted">Subsector: {{ emisora.subsector }}</span>
-			  </div>
-			  {% endfor %}
-          </div>			
-        </div>
-      </div>
-    </div>
-    <script src="{{ url_for('static', filename = 'jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'app.js') }}"></script>
-</body>
-</html>
+{% endblock %}
