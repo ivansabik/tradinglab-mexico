@@ -3,7 +3,7 @@
     <h1 class="page-header">Emisoras</h1>
     <div class="row placeholders">
         {% for emisora in emisoras %}
-        <div class="col-sm-2 placeholder">
+        <div class="col-sm-3 placeholder">
             <a href="{{ url_for('emisora', clave = emisora.clave) }}">
                 <img class="img-responsive" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename = emisora.logo) }}"/>
             </a>

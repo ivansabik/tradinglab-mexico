@@ -1,34 +1,21 @@
-Tradinglab mx
+Tradinglab MX
 ============
 
-Laboratorio de trading
+App  para probar estrategias de trading en la bolsa de valores de Mexico (BMV) con datos históricos de Yahoo Finance.
+Desarrollada con Python, Flask, Zipline, Pandas, Highcharts.
 
-- Serie de tiempo IPC 
-- Noticias actuales de la empresa por ticker
-- Serie de tiempo de la empresa por ticker con eventos (noticias)
-- Consulta de retornos entre dos fechas de la empresa por ticker
+- Ver listado de emisoras (todas o por sector)
+- Ver info historica y grafica de precios de una emisora
+- Crear movimientos de compra-venta de distintas acciones para simular una estrategia de trading
 
-Python, Flask, Zipline
+## App
 
-- App ```app.py```
-- API ```api.py```
+```python tradinglabmx/app.py```
 
-##### RSS feed Noticias
+## Api
 
-http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=MX&lang=es-MX
+```python tradinglabmx/api.py```
 
-http://feeds.finance.yahoo.com/rss/2.0/headline?s=WALMEXV.MX&region=US&lang=en-US
+## Instrucciones deploy
 
-http://www.reuters.com/finance/stocks/companyNews?symbol=WALMEXV.MX&date=01082014
 
-##### Notebook
-
-http://nbviewer.ipython.org/github/mandroslabs/tradinglabmx/tree/master/notebook/
-
-##### Comisiones trading aplicables MX
-
-http://hablemosdefinanzas.wordpress.com/2011/06/06/invirtiendo-sin-asesores-el-caso-de-accitrade-y-bursanet/
-
-##### Charteo
-
-http://www.highcharts.com/stock/demo

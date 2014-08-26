@@ -11,8 +11,8 @@ def index():
 @app.route('/api/emisoras')
 def api_emisoras():
     emisora = Emisora()
-    emisoras = emisora.todas_json()
-    return jsonify(lista_emisoras = emisoras)
+    emisoras = emisora.todas()
+    return jsonify(lista_emisoras=emisoras)
     
 @app.route('/api/emisora')
 def api_emisora():
