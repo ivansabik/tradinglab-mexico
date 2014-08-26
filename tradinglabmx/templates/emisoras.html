@@ -3,16 +3,18 @@
     <h1 class="page-header">Emisoras</h1>
     <div class="row placeholders">
         {% for emisora in emisoras %}
-        <div class="col-xs-6 col-sm-3 placeholder">
+        <div class="col-sm-2 placeholder">
             <a href="{{ url_for('emisora', clave = emisora.clave) }}">
                 <img class="img-responsive" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename = emisora.logo) }}"/>
-			</a>
-            <h4>{{ emisora.clave }}</h4>
-			 <h6>{{ emisora.nombre }}</h6>
-			 <span class="text-muted">Sector: {{ emisora.sector }}</span>
-			 </br>
-			 <span class="text-muted">Subsector: {{ emisora.subsector }}</span>
+            </a>
+            <h3>{{ emisora.clave }}</h3>
+	    <p>{{ emisora.nombre }}</p>
+            <p>
+                <strong>Sector: </strong><span>{{ emisora.sector }}</span>
+	        </br>
+	        <strong>Subsector: </strong><span>{{ emisora.subsector }}</span>
+            </p>
         </div>
-		{% endfor %}
+	{% endfor %}
     </div>
 {% endblock %}
