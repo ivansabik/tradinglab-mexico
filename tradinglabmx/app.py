@@ -14,7 +14,11 @@ def index():
 @app.route('/emisoras')
 def emisoras():
     emisora = Emisora()
-    emisoras = emisora.todas()
+    if 'sector' in request.args:
+        id_sector = request.args['sector']
+        emisoras = emisora.sector(id_sector)
+    else:
+        emisoras = emisora.todas()
     return render_template('emisoras.html', emisoras=emisoras)
     
 @app.template_filter('fecha_cotizacion')
@@ -36,7 +40,7 @@ def emisora():
             precios = {int(k):int(v) for k,v in precios.items()}
             precios = collections.OrderedDict(sorted(precios.items()))
             precios = precios.items()
-            return render_template('emisora.html', emisora = emisora, precios = dumps(precios))
+            return render_template('emisora.html', emisora=emisora, precios=dumps(precios))
         else:
             # TODO: tmpl con mensaje que no encontro clave
             return redirect(url_for('emisoras'))

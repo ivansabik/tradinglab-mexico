@@ -33,8 +33,15 @@ class Emisora:
         emisoras_json = json.load(json_data)
         return emisoras_json
         
-    def sector(self):
-        return 'TODO emisoras de un sector'
+    def sector(self, id_sector):
+        json_data = open('emisoras.json')
+        emisoras_json = json.load(json_data)
+        emisoras_sector = []
+        for emisora_json in emisoras_json:
+            id_sector_json  = emisora_json.get('id_sector', '')
+            if int(id_sector) == id_sector_json:
+                emisoras_sector.append(emisora_json)
+        return emisoras_sector
 
 # Movimiento de trading
 class MovimientoTrading:

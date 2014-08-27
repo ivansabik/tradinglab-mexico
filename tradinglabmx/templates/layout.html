@@ -22,7 +22,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="{{ url_for('emisoras') }}">Emisoras</a></li>
             <li><a href="#">Indicadores globales</a></li>
-            <li><a href="#">Construir estrategia</a></li>
+            <li><a href="#">Estrategia trading</a></li>
+            <li><a href="#">Comparar emisoras</a></li>
           </ul>
         </div>
       </div>
@@ -31,17 +32,15 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="#">Energia</a></li>
-            <li><a href="#">Materiales</a></li>
-            <li><a href="#">Industrial</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Consumo frecuente</a></li>
-            <li><a href="#">Salud</a></li>
-            <li><a href="#">Financieros</a></li>
-            <li><a href="#">TI</a></li>
-            <li><a href="#">Telecom</a></li>
-            <li><a href="#">Servicios publicos</a></li>
-            <li><a href="#">FIBRAs</a></li>
+            <li><a href="{{ url_for('emisoras', sector=1) }}">Energía</a></li>
+            <li><a href="{{ url_for('emisoras', sector=2) }}">Materiales</a></li>
+            <li><a href="{{ url_for('emisoras', sector=3) }}">Industrial</a></li>
+            <li><a href="{{ url_for('emisoras', sector=4) }}">Servicios y bienes secundarios</a></li>
+            <li><a href="{{ url_for('emisoras', sector=5) }}">Consumo frecuente</a></li>
+            <li><a href="{{ url_for('emisoras', sector=6) }}">Salud</a></li>
+            <li><a href="{{ url_for('emisoras', sector=7) }}">Financieros</a></li>
+            <li><a href="{{ url_for('emisoras', sector=9) }}">Telecom</a></li>
+            <li><a href="{{ url_for('emisoras', sector=11) }}">FIBRAs (REITs)</a></li>
           </ul>
         </div>
         <div class="col-md-offset-2 main">
