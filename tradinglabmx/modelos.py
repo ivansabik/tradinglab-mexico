@@ -49,3 +49,8 @@ class MovimientoTrading:
     num_acciones = ''
     emisora = ''
     fecha = ''
+    
+# Portafolio
+class Portafolio:
+    acciones = [{'emisora': 'ALPEK', 'peso': 0.25}]
+    
