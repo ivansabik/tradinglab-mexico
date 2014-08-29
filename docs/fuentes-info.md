@@ -9,3 +9,5 @@ http://www.reuters.com/finance/stocks/companyNews?symbol=WALMEXV.MX&date=0108201
 ## Comisiones trading aplicables MX
 
 http://hablemosdefinanzas.wordpress.com/2011/06/06/invirtiendo-sin-asesores-el-caso-de-accitrade-y-bursanet/
+
+https://code.google.com/p/ultra-finance/wiki/pyTaLib

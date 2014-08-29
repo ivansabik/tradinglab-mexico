@@ -6,14 +6,20 @@
 - Crear estrategia
  - Agregar movimiento de trading
 - Ejecutar y ver resultados de estrategia
-
+ - Benchmark contra índices
+   - IPC (^MXX)
+   - INMEX RT (IT.MX)
+   - IPC Sustentable (GI.MX)
+   - BMV FIBRAS (FB00000000.MX)
+   - BURSA ÓPTIMO (VD.MX)
+	  
 ## Construccion
 
 - Serie de tiempo IPC 
 - Noticias actuales de la empresa por ticker
 - Serie de tiempo de la empresa por ticker con eventos (noticias)
 - Consulta de retornos entre dos fechas de la empresa por ticker
-
+- https://www.quantopian.com/algobuilder
 
 ## Indicadores por emisora
 
@@ -29,3 +35,11 @@
 - Earnings/Share
 - Price/Sales
 - Price/Book
+
+## Resultados de estrategia de trading
+
+- Returns
+- Alpha
+- Beta
+- Sharpe
+- Drawdown
