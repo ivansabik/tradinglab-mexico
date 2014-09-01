@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ emisora_1.clave }} - {{ emisora_2.clave }}</h1>
+    <span>{{ emisora_1.nombre }} - {{ emisora_2.nombre }}</span>
+    <img class="img-responsive" alt="{{ emisora_1.nombre }}" src="{{ url_for('static', filename = emisora_1.logo) }}"/>
+    <img class="img-responsive" alt="{{ emisora_2.nombre }}" src="{{ url_for('static', filename = emisora_2.logo) }}"/>
+    <h2>Rendimientos</h2>
+    <div id="grafica" style="height: 400px; min-width: 310px"></div>
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static', filename = 'js/highstock.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/exporting.js') }}"></script>
+    <script>data = {{ datos|safe }};</script>
+    <script src="{{ url_for('static', filename = 'js/comparacion.js') }}"></script>
+{% endblock %}

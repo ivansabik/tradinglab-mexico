@@ -21,8 +21,13 @@ class Emisora:
                     datos.rename(columns={'Close': 'close'}, inplace=True)
                     datos.rename(columns={'Volume': 'volume'}, inplace=True)
                     datos.rename(columns={'Adj Close': 'adj_close'}, inplace=True)
+                    datos['rendimientos'] = datos['adj_close'].pct_change()
+                    media_rendimientos = datos['rendimientos'].mean()
+                    std_rendimientos = datos['rendimientos'].std()
                     datos_json = json.loads(datos.to_json())
                     emisora_json['info_historica'] = datos_json
+                    emisora_json['media_rendimientos'] = media_rendimientos
+                    emisora_json['std_rendimientos'] = std_rendimientos
                 else:
                     emisora_json['info_historica'] = {'open': {}, 'high': {}, 'low': {}, 'close': {}, 'volume': {}, 'adj_close': {}}
                 return emisora_json

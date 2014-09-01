@@ -46,10 +46,32 @@ def emisora():
             return redirect(url_for('emisoras'))
     else:
         return render_template('emisoras.html')
-    
-@app.route('/estrategia')
-def estrategia():
-    return render_template('estrategia.html')
+   
+@app.route('/comparar')
+def comparar():
+	emisora = Emisora()
+	if not 'emisora' in request.args:
+		emisoras = emisora.todas()
+		return render_template('comparar-seleccion.html', emisoras=emisoras)
+	else:
+		clave_emisora_1 = request.args['emisora']
+		clave_emisora_2 = request.args['emisora2']
+		emisora_1 = emisora.buscar(clave_emisora_1)
+		emisora_2 = emisora.buscar(clave_emisora_2)
+		rend_emisora_1 = emisora_1['info_historica']['rendimientos']
+		rend_emisora_2 = emisora_2['info_historica']['rendimientos']
+		media_emisora_1 = emisora_1['media_rendimientos']
+		std_emisora_1 = emisora_1['std_rendimientos']
+		media_emisora_2 = emisora_2['media_rendimientos']
+		std_emisora_2 = emisora_2['std_rendimientos']
+		rend_emisora_1 = {int(k):int(v) for k,v in rend_emisora_1.items()}
+		rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
+		
+		
+        rend_emisora_1 = rend_emisora_1.items()
+		
+        datos = {'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
+        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, datos=dumps(datos))
 
 if __name__== '__main__':
     app.run(debug=True)

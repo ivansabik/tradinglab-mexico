@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4>Escoge las emisoras a comprarar</h4>
+<form>
+	<p>Emisora 1: </p>
+	<select class="form-control" name="emisora">
+		{% for emisora in emisoras %}
+		<option value="{{ emisora.clave }}">{{ emisora.clave }} - {{ emisora.nombre }}</option>
+        {% endfor %}
+	</select>
+	<p></p>
+	<p>Emisora 2: </p>
+	<select class="form-control" name="emisora2">
+		{% for emisora in emisoras %}
+		<option value="{{ emisora.clave }}">{{ emisora.clave }} - {{ emisora.nombre }}</option>
+        {% endfor %}
+	</select>
+	<p></p>
+	<button class="btn" type="submit">Comparar</button>	
+</form>
+{% endblock %}
