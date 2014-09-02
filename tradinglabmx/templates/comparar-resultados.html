@@ -6,10 +6,16 @@
     <img class="img-responsive" alt="{{ emisora_2.nombre }}" src="{{ url_for('static', filename = emisora_2.logo) }}"/>
     <h2>Rendimientos</h2>
     <div id="grafica" style="height: 400px; min-width: 310px"></div>
+    <h2>Riesgo / Rendimiento</h2>
+    <div id="grafica2" style="height: 400px; min-width: 310px"></div>
 {% endblock %}
 {% block js %}
     <script src="{{ url_for('static', filename = 'js/highstock.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/exporting.js') }}"></script>
-    <script>data = {{ datos|safe }};</script>
+    <script>
+		emisora_1  = "{{ emisora_1.clave }}";
+		emisora_2 = "{{ emisora_2.clave }}";
+		data = {{ data|safe }};
+	</script>
     <script src="{{ url_for('static', filename = 'js/comparacion.js') }}"></script>
 {% endblock %}

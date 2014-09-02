@@ -34,13 +34,34 @@ def emisora():
         emisora = Emisora()
         emisora = emisora.buscar(clave)
         if not emisora.get('error'):
-            precios = emisora['info_historica']['adj_close']
-            # Convierte keys a ints (numeros)
-            # Hay que ordenar fechas para http://www.highcharts.com/errors/15
-            precios = {int(k):int(v) for k,v in precios.items()}
-            precios = collections.OrderedDict(sorted(precios.items()))
-            precios = precios.items()
-            return render_template('emisora.html', emisora=emisora, precios=dumps(precios))
+            # TODO: conversion en funcion, se usa 8 veces
+            # Convierte keys a ints (numeros), ordenados para highcharts
+            cierre_aj = emisora['info_historica']['adj_close']
+            cierre_aj = {int(k):float(v) for k,v in cierre_aj.items()}
+            cierre_aj = collections.OrderedDict(sorted(cierre_aj.items()))
+            cierre_aj = cierre_aj.items()
+            volumen = emisora['info_historica']['volume']
+            volumen = {int(k):float(v) for k,v in volumen.items()}
+            volumen = collections.OrderedDict(sorted(volumen.items()))
+            volumen = volumen.items()
+            mavg5 = emisora['info_historica']['mavg5']
+            mavg5 = {int(k):float(v) for k,v in mavg5.items()}
+            mavg5 = collections.OrderedDict(sorted(mavg5.items()))
+            mavg5 = mavg5.items()
+            mavg10 = emisora['info_historica']['mavg10']
+            mavg10 = {int(k):float(v) for k,v in mavg10.items()}
+            mavg10 = collections.OrderedDict(sorted(mavg10.items()))
+            mavg10 = mavg10.items()
+            mavg15 = emisora['info_historica']['mavg15']
+            mavg15 = {int(k):float(v) for k,v in mavg15.items()}
+            mavg15 = collections.OrderedDict(sorted(mavg15.items()))
+            mavg15 = mavg15.items()
+            mavg30 = emisora['info_historica']['mavg30']
+            mavg30 = {int(k):float(v) for k,v in mavg30.items()}
+            mavg30 = collections.OrderedDict(sorted(mavg30.items()))
+            mavg30 = mavg30.items()
+            data = {'cierre_aj': cierre_aj, 'volumen': volumen, 'mavg5': mavg5, 'mavg10': mavg10, 'mavg15': mavg15, 'mavg30': mavg30}
+            return render_template('emisora.html', emisora=emisora, data=dumps(data))
         else:
             # TODO: tmpl con mensaje que no encontro clave
             return redirect(url_for('emisoras'))
@@ -59,19 +80,19 @@ def comparar():
 		emisora_1 = emisora.buscar(clave_emisora_1)
 		emisora_2 = emisora.buscar(clave_emisora_2)
 		rend_emisora_1 = emisora_1['info_historica']['rendimientos']
+		rend_emisora_1 = {int(k):float(v) for k,v in rend_emisora_1.items() if v is not None}
+		rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
+		rend_emisora_1 = rend_emisora_1.items()	
 		rend_emisora_2 = emisora_2['info_historica']['rendimientos']
+		rend_emisora_2 = {int(k):float(v) for k,v in rend_emisora_2.items() if v is not None}
+		rend_emisora_2 = collections.OrderedDict(sorted(rend_emisora_2.items()))
+		rend_emisora_2 = rend_emisora_2.items()	
 		media_emisora_1 = emisora_1['media_rendimientos']
 		std_emisora_1 = emisora_1['std_rendimientos']
 		media_emisora_2 = emisora_2['media_rendimientos']
 		std_emisora_2 = emisora_2['std_rendimientos']
-		rend_emisora_1 = {int(k):int(v) for k,v in rend_emisora_1.items()}
-		rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
-		
-		
-        rend_emisora_1 = rend_emisora_1.items()
-		
-        datos = {'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
-        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, datos=dumps(datos))
+        data = {'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
+        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, data=dumps(data))
 
 if __name__== '__main__':
     app.run(debug=True)

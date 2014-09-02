@@ -43,6 +43,6 @@
     <script src="{{ url_for('static', filename = 'js/dataTables.bootstrap.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/highstock.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/exporting.js') }}"></script>
-    <script>data = {{ precios|safe }};</script>
+    <script>data = {{ data|safe }};</script>
     <script src="{{ url_for('static', filename = 'js/emisora.js') }}"></script>
 {% endblock %}
