@@ -1,25 +1,24 @@
 $(document).ready(function() {
     $('#grafica').highcharts('StockChart', {
-        rangeSelector : {
-            selected : 1,
+        rangeSelector: {
+            selected: 1,
             inputEnabled: $('#container').width() > 480
         },
-        series : [{
-            name : emisora_1,
-            data : data.rend_emisora_1,
+        series: [{
+            name: emisora_1,
+            data: data.rend_emisora_1,
             tooltip: {
                 valueDecimals: 4
             }
-        },
-        {
-            name : emisora_2,
-            data : data.rend_emisora_2,
+        }, {
+            name: emisora_2,
+            data: data.rend_emisora_2,
             tooltip: {
                 valueDecimals: 4
             }
         }]
     });
-    
+
     $('#grafica2').highcharts({
         chart: {
             type: 'scatter',
@@ -59,10 +58,14 @@ $(document).ready(function() {
         },
         series: [{
             name: emisora_1,
-            data: [[data.media_emisora_1, data.std_emisora_1]]
+            data: [
+                [data.media_emisora_1, data.std_emisora_1]
+            ]
         }, {
             name: emisora_2,
-            data: [[data.media_emisora_2, data.std_emisora_2]]
+            data: [
+                [data.media_emisora_2, data.std_emisora_2]
+            ]
         }]
     });
 });

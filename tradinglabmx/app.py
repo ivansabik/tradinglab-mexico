@@ -52,15 +52,19 @@ def emisora():
             mavg10 = {int(k):float(v) for k,v in mavg10.items()}
             mavg10 = collections.OrderedDict(sorted(mavg10.items()))
             mavg10 = mavg10.items()
-            mavg15 = emisora['info_historica']['mavg15']
-            mavg15 = {int(k):float(v) for k,v in mavg15.items()}
-            mavg15 = collections.OrderedDict(sorted(mavg15.items()))
-            mavg15 = mavg15.items()
-            mavg30 = emisora['info_historica']['mavg30']
-            mavg30 = {int(k):float(v) for k,v in mavg30.items()}
-            mavg30 = collections.OrderedDict(sorted(mavg30.items()))
-            mavg30 = mavg30.items()
-            data = {'cierre_aj': cierre_aj, 'volumen': volumen, 'mavg5': mavg5, 'mavg10': mavg10, 'mavg15': mavg15, 'mavg30': mavg30}
+            mavg20 = emisora['info_historica']['mavg20']
+            mavg20 = {int(k):float(v) for k,v in mavg20.items()}
+            mavg20 = collections.OrderedDict(sorted(mavg20.items()))
+            mavg20 = mavg20.items()
+            mavg50 = emisora['info_historica']['mavg50']
+            mavg50 = {int(k):float(v) for k,v in mavg50.items()}
+            mavg50 = collections.OrderedDict(sorted(mavg50.items()))
+            mavg50 = mavg50.items()
+            mavg200 = emisora['info_historica']['mavg50']
+            mavg200 = {int(k):float(v) for k,v in mavg200.items()}
+            mavg200 = collections.OrderedDict(sorted(mavg200.items()))
+            mavg200 = mavg200.items()
+            data = {'cierre_aj': cierre_aj, 'volumen': volumen, 'mavg5': mavg5, 'mavg10': mavg10, 'mavg20': mavg20, 'mavg50': mavg50, 'mavg200': mavg200}
             return render_template('emisora.html', emisora=emisora, data=dumps(data))
         else:
             # TODO: tmpl con mensaje que no encontro clave

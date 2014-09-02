@@ -4,14 +4,12 @@
 - Ver info de emisora
   - Serie de tiempo con eventos de Bloomberg, vol y precios
 - Crear estrategia
- - Agregar movimiento de trading
+  - Agregar movimiento de trading
 - Ejecutar y ver resultados de estrategia
- - Benchmark contra índices
-   - IPC (^MXX)
-   - INMEX RT (IT.MX)
-   - IPC Sustentable (GI.MX)
-   - BMV FIBRAS (FB00000000.MX)
-   - BURSA ÓPTIMO (VD.MX)
+  - Crear portafolio por número de acciones 
+  - Crear portafolio por monto de inversión y pesos en % sobre el portafolio
+  - Benchmark contra índices
+    - IPC (^MXX)
 	  
 ## Construccion
 
