@@ -31,6 +31,13 @@ Por el momento no se usa AJAX, se genera directamente el código Javascript en e
 ```python tradinglabmx/api.py```
 
 ## Instrucciones deploy
+#### Con VM a partir del disco
+#### Manualmente en Ubuntu
 
-- Con VM a partir del disco
-- Manualmente en ubuntu con Anaconda o pip
+```wget http://repo.continuum.io/archive/Anaconda-2.0.0-Linux-x86.sh```
+
+
+```sudo apt-get install python-pip python-all-dev```
+```sudo pip install numpy```
+```sudo pip install zipline```
+```sudo pip install flask```
