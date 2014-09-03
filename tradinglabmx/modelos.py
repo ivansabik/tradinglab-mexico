@@ -27,12 +27,15 @@ class Emisora:
                     datos['mavg20'] = pd.ewma(datos['adj_close'], 20)
                     datos['mavg50'] = pd.ewma(datos['adj_close'], 50)
                     datos['mavg200'] = pd.ewma(datos['adj_close'], 200)
-                    media_rendimientos = datos['rendimientos'].mean()
-                    std_rendimientos = datos['rendimientos'].std()
                     datos_json = json.loads(datos.to_json())
                     emisora_json['info_historica'] = datos_json
-                    emisora_json['media_rendimientos'] = media_rendimientos
-                    emisora_json['std_rendimientos'] = std_rendimientos
+                    emisora_json['estadisticas'] = {}
+                    emisora_json['estadisticas']['rendimientos_media'] = datos['rendimientos'].mean()
+                    emisora_json['estadisticas']['rendimientos_std'] = datos['rendimientos'].std()
+                    emisora_json['estadisticas']['precio_alto'] = datos['close'].max()
+                    emisora_json['estadisticas']['precio_bajo'] = datos['close'].min()
+                    emisora_json['estadisticas']['precio_media'] = datos['close'].mean()
+                    emisora_json['estadisticas']['precio_std'] = datos['close'].std()
                 else:
                     emisora_json['info_historica'] = {'open': {}, 'high': {}, 'low': {}, 'close': {}, 'volume': {}, 'adj_close': {}}
                 return emisora_json

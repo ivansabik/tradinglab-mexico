@@ -27,6 +27,14 @@ def _filter_fecha_cotizacion(fecha_epoch):
     fecha = time.gmtime(fecha_epoch/1000)
     return time.strftime('%m-%d-%Y', fecha)
     
+@app.template_filter('indicador')
+def _filter_indicador(valor):
+    return '{0:.4f}'.format(valor)
+    
+@app.template_filter('porcentaje')
+def _filter_porcentaje(valor):
+    return '{0:.4f}'.format(valor*100) + ' %'
+    
 @app.route('/emisora')
 def emisora():
     if 'clave' in request.args:
@@ -91,10 +99,10 @@ def comparar():
 		rend_emisora_2 = {int(k):float(v) for k,v in rend_emisora_2.items() if v is not None}
 		rend_emisora_2 = collections.OrderedDict(sorted(rend_emisora_2.items()))
 		rend_emisora_2 = rend_emisora_2.items()	
-		media_emisora_1 = emisora_1['media_rendimientos']
-		std_emisora_1 = emisora_1['std_rendimientos']
-		media_emisora_2 = emisora_2['media_rendimientos']
-		std_emisora_2 = emisora_2['std_rendimientos']
+		media_emisora_1 = emisora_1['estadisticas']['rendimientos_media']
+		std_emisora_1 = emisora_1['estadisticas']['rendimientos_std']
+		media_emisora_2 = emisora_2['estadisticas']['rendimientos_media']
+		std_emisora_2 = emisora_2['estadisticas']['rendimientos_std']
         data = {'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
         return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, data=dumps(data))
 

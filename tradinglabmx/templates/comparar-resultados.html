@@ -11,23 +11,35 @@
 		<thead>
 			<tr>
 				<th>Emisora</th>
-				<th>Media rendimientos</th>
-				<th>Desv. std.</th>
-				<th>Covarianza</th>
+				<th>Precio alto</th>
+				<th>Precio bajo</th>
+				<th>Precio promedio</th>
+				<th>Desv. est. precio</th>
+				<th>Rendimiento promedio</th>
+				<th>Desv. est. rendimiento</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>{{ emisora_1.clave }}</td>
-				<td>X.YZ</td>
-				<td>X.YZ %</td>
-				<td>COV con otra</td>
+				<td>{{ emisora_1.estadisticas.precio_alto | indicador }}</td>
+				<td>{{ emisora_1.estadisticas.precio_bajo | indicador }}</td>
+				<td>{{ emisora_1.estadisticas.precio_media | indicador }}</td>
+				<td>{{ emisora_1.estadisticas.precio_std | indicador }}</td>
+				<td>{{ emisora_1.estadisticas.rendimientos_media | porcentaje }}</td>
+				<td>{{ emisora_1.estadisticas.rendimientos_std | indicador }}</td>
 			</tr>
 			<tr>
 				<td>{{ emisora_2.clave }}</td>
-				<td>X.YZ</td>
-				<td>X.YZ %</td>
-				<td>COV con otra</td>
+				<td>{{ emisora_2.estadisticas.precio_alto | indicador }}</td>
+				<td>{{ emisora_2.estadisticas.precio_bajo | indicador }}</td>
+				<td>{{ emisora_2.estadisticas.precio_media | indicador }}</td>
+				<td>{{ emisora_2.estadisticas.precio_std | indicador }}</td>
+				<td>{{ emisora_2.estadisticas.rendimientos_media | porcentaje }}</td>
+				<td>{{ emisora_2.estadisticas.rendimientos_std | indicador }}</td>
+			</tr>
+			<tr>
+				<td colspan="3">Covarianza: X.YZ</td>
 			</tr>
 		</tbody>
 	</table>

@@ -21,36 +21,28 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Alto</td>
-				<td>X.YZ</td>
+				<td>Precio alto</td>
+				<td>{{ emisora.estadisticas.precio_alto | indicador }}</td>
 			</tr>
 			<tr>
-				<td>Bajo</td>
-				<td>X.YZ</td>
+				<td>Precio bajo</td>
+				<td>{{ emisora.estadisticas.precio_bajo | indicador }}</td>
+			</tr>
+			<tr>
+				<td>Precio promedio</td>
+				<td>{{ emisora.estadisticas.precio_media | indicador }}</td>
+			</tr>
+			<tr>
+				<td>Desv. est. precio</td>
+				<td>{{ emisora.estadisticas.precio_std | indicador }}</td>
 			</tr>
 			<tr>
 				<td>Rendimiento promedio</td>
-				<td>X.YZ %</td>
+				<td>{{ emisora.estadisticas.rendimientos_media | porcentaje }}</td>
 			</tr>
 			<tr>
-				<td>Desv. est.</td>
-				<td>X.YZ</td>
-			</tr>
-			<tr>
-				<td>Beta</td>
-				<td>X.YZ</td>
-			</tr>
-			<tr>
-				<td>Capitalización de mercado</td>
-				<td>X.YZ</td>
-			</tr>
-			<tr>
-				<td>EPS</td>
-				<td>X.YZ</td>
-			</tr>
-			<tr>
-				<td>P/E</td>
-				<td>X.YZ</td>
+				<td>Desv. est. rendimiento</td>
+				<td>{{ emisora.estadisticas.rendimientos_std | indicador }}</td>
 			</tr>
 		</tbody>
 	</table>
