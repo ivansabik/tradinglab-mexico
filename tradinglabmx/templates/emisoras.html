@@ -5,7 +5,7 @@
             <!--<div class="row">!-->
              <div class="col-md-4">
                 <a href="{{ url_for('emisora', clave=emisora.clave) }}">
-                    <img class="img-responsive" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename=emisora.logo) }}"/>
+                    <img class="logo" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename=emisora.logo) }}"/>
                 </a>
                 <h3>{{ emisora.clave }}</h3>
                 <p>{{ emisora.nombre }}</p>
@@ -18,3 +18,12 @@
              <!--</div>!-->
         {% endfor %}
 {% endblock %}
+{% block js %}
+    <script>
+        $(function() {
+            $('.logo').nailthumb({width: 180, height: 180, method: 'resize'});
+        });
+	</script>
+{% endblock %}
+
+    
