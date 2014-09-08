@@ -622,17 +622,17 @@
 		"id_sector": 5
 	},
 	{
-		"clave": "FibraMQ",
-		"clave_yahoo": "FibraMQ12.MX",
+		"clave": "FIBRAMQ",
+		"clave_yahoo": "FIBRAMQ.MX",
 		"nombre": "Fibra Macquarie (Deutsche Bank)",
-		"logo": "img\/FibraMQ.png",
+		"logo": "img\/FIBRAMQ.png",
         "id_sector": 11
 	},
 	{
-		"clave": "FibraPL",
-		"clave_yahoo": "FibraPL14.MX",
+		"clave": "FIBRAPL",
+		"clave_yahoo": "FIBRAPL.MX",
 		"nombre": "Fibra Prologis (Deutsche Bank)",
-		"logo": "img\/FibraPL.png",
+		"logo": "img\/FIBRAPL.png",
         "id_sector": 11
 	},
 	{
@@ -1709,7 +1709,7 @@
 	{
 		"clave": "QUMMA",
 		"clave_yahoo": "QUMMAB.MX",
-		"nombre": "GRUPO QUMMA",
+		"nombre": "Grupo Qumma",
 		"logo": "img\/QUMMA.png",
 		"fecha_constitucion": "21\/09\/1984",
 		"fecha_listado": "30\/06\/1994",
@@ -1725,7 +1725,7 @@
 		"clave": "RCENTRO",
 		"clave_yahoo": "RCENTROA.MX",
 		"clave_bloomberg": "RCENTRO.MX",
-		"nombre": "GRUPO RADIO CENTRO",
+		"nombre": "Grupo Radio Centro",
 		"logo": "img\/RCENTRO.png",
 		"fecha_constitucion": "08\/06\/1971",
 		"fecha_listado": "18\/12\/1992",
@@ -1740,7 +1740,7 @@
 	{
 		"clave": "REALTUR",
 		"clave_yahoo": "REALTURA.MX",
-		"nombre": "REAL TURISMO",
+		"nombre": "Real Turismo",
 		"logo": "img\/REALTUR.png",
 		"fecha_constitucion": "09\/06\/1980",
 		"fecha_listado": "16\/12\/1987",
@@ -1755,7 +1755,7 @@
 	{
 		"clave": "SAB",
 		"clave_yahoo": "SAB.MX",
-		"nombre": "GRUPO CASA SABA",
+		"nombre": "Grupo Casa Saba",
 		"logo": "img\/SAB.png",
 		"fecha_constitucion": "16\/11\/1982",
 		"fecha_listado": "07\/12\/1993",
@@ -1770,7 +1770,7 @@
 	{
 		"clave": "SAN",
 		"clave_yahoo": "SANMEXB.MX",
-		"nombre": "BANCO SANTANDER, S.A.",
+		"nombre": "Banco Santander",
 		"logo": "img\/SAN.png",
 		"fecha_constitucion": "05\/01\/1957",
 		"fecha_listado": "05\/10\/2005",
@@ -1785,7 +1785,7 @@
 	{
 		"clave": "SANLUIS",
 		"clave_yahoo": "SANLUISA.MX",
-		"nombre": "SANLUIS CORPORACION, S.A.B. DE C. V.",
+		"nombre": "Sanluis Corporación",
 		"logo": "img\/SANLUIS.png",
 		"fecha_constitucion": "24\/07\/1984",
 		"fecha_listado": "01\/10\/1984",
@@ -1800,7 +1800,7 @@
 	{
 		"clave": "SANMEX",
 		"clave_yahoo": "SANMEXB.MX",
-		"nombre": "GRUPO FINANCIERO SANTANDER MEXICO",
+		"nombre": "Grupo Financiero Santander México",
 		"logo": "img\/SANMEX.png",
 		"fecha_constitucion": "14\/11\/1991",
 		"fecha_listado": "11\/12\/1991",
@@ -1815,7 +1815,7 @@
 	{
 		"clave": "SARE",
 		"clave_yahoo": "SAREB.MX",
-		"nombre": "SARE HOLDING",
+		"nombre": "SARE Holding",
 		"logo": "img\/SARE.png",
 		"fecha_constitucion": "29\/07\/1997",
 		"fecha_listado": "10\/10\/2003",
@@ -1830,7 +1830,7 @@
 	{
 		"clave": "SAVIA",
 		"clave_yahoo": "SAVIAA.MX",
-		"nombre": "SAVIA,",
+		"nombre": "SAVIA",
 		"logo": "img\/SAVIA.png",
 		"fecha_constitucion": "30\/07\/1936",
 		"fecha_listado": "30\/06\/1962",
@@ -1845,7 +1845,7 @@
 	{
 		"clave": "SIMEC",
 		"clave_yahoo": "SIMECB.MX",
-		"nombre": "GRUPO SIMEC",
+		"nombre": "Grupo Simec",
 		"logo": "img\/SIMEC.png",
 		"fecha_constitucion": "22\/08\/1990",
 		"fecha_listado": "01\/07\/1993",
@@ -1860,7 +1860,7 @@
 	{
 		"clave": "SORIANA",
 		"clave_yahoo": "SORIANAB.MX",
-		"nombre": "ORGANIZACION SORIANA",
+		"nombre": "Organización Soriana",
 		"logo": "img\/SORIANA.png",
 		"fecha_constitucion": "18\/12\/1981",
 		"fecha_listado": "30\/09\/1987",
@@ -1874,7 +1874,7 @@
 	{
 		"clave": "SPORT",
 		"clave_yahoo": "SPORTS.MX",
-		"nombre": "GRUPO SPORTS WORLD",
+		"nombre": "Grupo Sports World",
 		"logo": "img\/SPORT.png",
 		"fecha_constitucion": "02\/03\/2005",
 		"fecha_listado": "07\/10\/2010",
@@ -1889,7 +1889,7 @@
 	{
 		"clave": "TEAK",
 		"clave_yahoo": "TEAKCPO.MX",
-		"nombre": "PROTEAK UNO",
+		"nombre": "Proteak Uno",
 		"logo": "img\/TEAK.png",
 		"fecha_constitucion": "11\/09\/2001",
 		"fecha_listado": "30\/06\/2010",
@@ -1904,7 +1904,7 @@
 	{
 		"clave": "TEKCHEM",
 		"clave_yahoo": "TEKCHEMA.MX",
-		"nombre": "TEKCHEM",
+		"nombre": "Tekchem",
 		"logo": "img\/TEKCHEM.png",
 		"fecha_constitucion": "12\/11\/1991",
 		"fecha_listado": "27\/09\/1996",
@@ -1919,14 +1919,14 @@
 	{
 		"clave": "TERRA",
 		"clave_yahoo": "TERRA13.MX",
-		"nombre": "Fibra TERRAFINA (THE BANK OF NEW YORK MELLON MEXICO)",
+		"nombre": "Fibra Terrafina (The Bank of New York Mellon)",
 		"logo": "img\/TERRA.png",
         "id_sector": 12
 	},
 	{
 		"clave": "TLEVISA",
 		"clave_yahoo": "TLEVISACPO.MX",
-		"nombre": "GRUPO TELEVISA",
+		"nombre": "Grupo Televisa",
 		"logo": "img\/TLEVISA.png",
 		"fecha_constitucion": "19\/12\/1990",
 		"fecha_listado": "10\/12\/1991",
@@ -1941,7 +1941,7 @@
 	{
 		"clave": "TMM",
 		"clave_yahoo": "TMMA.MX",
-		"nombre": "GRUPO TMM",
+		"nombre": "Grupo TMM",
 		"logo": "img\/TMM.png",
 		"fecha_constitucion": "14\/08\/1987",
 		"fecha_listado": "27\/12\/2001",
@@ -1956,7 +1956,7 @@
 	{
 		"clave": "TS",
 		"clave_yahoo": "TS.MX",
-		"nombre": "TENARIS",
+		"nombre": "Tenaris",
 		"logo": "img\/TS.png",
 		"fecha_constitucion": "17\/12\/2001",
 		"fecha_listado": "16\/12\/2002",
@@ -1971,7 +1971,7 @@
 	{
 		"clave": "URBI",
 		"clave_yahoo": "URBI.MX",
-		"nombre": "URBI DESARROLLOS URBANOS",
+		"nombre": "Urbi Desarrollos Urbanos",
 		"logo": "img\/URBI.png",
 		"fecha_constitucion": "24\/11\/1981",
 		"fecha_listado": "18\/03\/2002",
@@ -1986,7 +1986,7 @@
 	{
 		"clave": "VALUEGF",
 		"clave_yahoo": "VALUEGFO.MX",
-		"nombre": "VALUE GRUPO FINANCIERO",
+		"nombre": "Value Grupo Financiero",
 		"logo": "img\/VALUEGF.png",
 		"fecha_constitucion": "05\/08\/1992",
 		"fecha_listado": "09\/12\/1992",
@@ -2001,7 +2001,7 @@
 	{
 		"clave": "VASCONI",
 		"clave_yahoo": "VASCONI.MX",
-		"nombre": "GRUPO VASCONIA",
+		"nombre": "Grupo Vasconia",
 		"logo": "img\/VASCONI.png",
 		"fecha_constitucion": "19\/01\/1934",
 		"fecha_listado": "12\/07\/1991",
@@ -2016,7 +2016,7 @@
 	{
 		"clave": "VESTA",
 		"clave_yahoo": "VESTA.MX",
-		"nombre": "CORPORACI\u00d3N INMOBILIARIA VESTA",
+		"nombre": "Corporación Inmobiliaria Vesta",
 		"logo": "img\/VESTA.png",
 		"fecha_constitucion": "18\/07\/1996",
 		"fecha_listado": "20\/07\/2012",
@@ -2031,7 +2031,7 @@
 	{
 		"clave": "VITRO",
 		"clave_yahoo": "VITROA.MX",
-		"nombre": "VITRO",
+		"nombre": "Vitro",
 		"logo": "img\/VITRO.png",
 		"fecha_constitucion": "27\/08\/1936",
 		"fecha_listado": "05\/01\/1976",
@@ -2046,7 +2046,7 @@
 	{
 		"clave": "VOLAR",
 		"clave_yahoo": "VOLARA.MX",
-		"nombre": "CONTROLADORA VUELA COMPA\u00d1\u00cdA DE AVIACI\u00d3N",
+		"nombre": "Controladora Vuela Compañóa de Aviación",
 		"logo": "img\/VOLAR.png",
 		"fecha_constitucion": "27\/10\/2005",
 		"fecha_listado": "11\/02\/2013",
@@ -2061,7 +2061,7 @@
 	{
 		"clave": "WALMEX",
 		"clave_yahoo": "WALMEXV.MX",
-		"nombre": "WAL - MART DE MEXICO",
+		"nombre": "Wal - Mart de México",
 		"logo": "img\/WALMEX.png",
 		"fecha_constitucion": "25\/10\/1965",
 		"fecha_listado": "25\/10\/1974",

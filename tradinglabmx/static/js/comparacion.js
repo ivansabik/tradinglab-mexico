@@ -1,4 +1,24 @@
 $(document).ready(function() {
+        $('#grafica3').highcharts('StockChart', {
+        rangeSelector: {
+            selected: 1,
+            inputEnabled: $('#container').width() > 480
+        },
+        series: [{
+            name: emisora_1,
+            data: data.precios_emisora_1,
+            tooltip: {
+                valueDecimals: 4
+            }
+        }, {
+            name: emisora_2,
+            data: data.precios_emisora_2,
+            tooltip: {
+                valueDecimals: 4
+            }
+        }]
+    });
+    
     $('#grafica').highcharts('StockChart', {
         rangeSelector: {
             selected: 1,
@@ -25,7 +45,7 @@ $(document).ready(function() {
             zoomType: 'xy'
         },
         title: {
-            text: 'Rendimientos vs Riesgo'
+            text: 'Rendimiento vs Riesgo'
         },
         xAxis: {
             title: {

@@ -2,8 +2,10 @@
 {% block content %}
     <h1>{{ emisora_1.clave }} - {{ emisora_2.clave }}</h1>
     <span>{{ emisora_1.nombre }} - {{ emisora_2.nombre }}</span>
-    <img class="img-responsive" alt="{{ emisora_1.nombre }}" src="{{ url_for('static', filename = emisora_1.logo) }}"/>
-    <img class="img-responsive" alt="{{ emisora_2.nombre }}" src="{{ url_for('static', filename = emisora_2.logo) }}"/>
+    <img class="logo" alt="{{ emisora_1.nombre }}" src="{{ url_for('static', filename = emisora_1.logo) }}"/>
+    <img class="logo" alt="{{ emisora_2.nombre }}" src="{{ url_for('static', filename = emisora_2.logo) }}"/>
+    <h2>Precios</h2>
+    <div id="grafica3" style="height: 400px; min-width: 310px"></div>
     <h2>Rendimientos</h2>
     <div id="grafica" style="height: 400px; min-width: 310px"></div>
     <h2>Riesgo / Rendimiento</h2>
@@ -39,7 +41,10 @@
 				<td>{{ emisora_2.estadisticas.rendimientos_std | indicador }}</td>
 			</tr>
 			<tr>
-				<td colspan="3">Covarianza: X.YZ</td>
+				<td colspan="3">Covarianza precio: {{ covarianza_precio | indicador }}</td>
+			</tr>
+            <tr>
+				<td colspan="3">Covarianza rendimiento: {{ covarianza_rendimiento | indicador }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -54,4 +59,9 @@
 		data = {{ data|safe }};
 	</script>
     <script src="{{ url_for('static', filename = 'js/comparacion.js') }}"></script>
+    <script>
+        $(function() {
+            $('.logo').nailthumb({width: 180, height: 180, method: 'resize'});
+        });
+	</script>
 {% endblock %}

@@ -3,13 +3,14 @@ from json import dumps
 from modelos import Emisora
 import collections
 import time
+import pandas as pd
 
 app = Flask(__name__)
 
 # Endpoints html
 @app.route('/')
 def index():
-	return redirect(url_for('emisoras'))
+    return redirect(url_for('emisoras'))
 	
 @app.route('/emisoras')
 def emisoras():
@@ -82,29 +83,43 @@ def emisora():
    
 @app.route('/comparar')
 def comparar():
-	emisora = Emisora()
-	if not 'emisora' in request.args:
-		emisoras = emisora.todas()
-		return render_template('comparar-seleccion.html', emisoras=emisoras)
-	else:
-		clave_emisora_1 = request.args['emisora']
-		clave_emisora_2 = request.args['emisora2']
-		emisora_1 = emisora.buscar(clave_emisora_1)
-		emisora_2 = emisora.buscar(clave_emisora_2)
-		rend_emisora_1 = emisora_1['info_historica']['rendimientos']
-		rend_emisora_1 = {int(k):float(v) for k,v in rend_emisora_1.items() if v is not None}
-		rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
-		rend_emisora_1 = rend_emisora_1.items()	
-		rend_emisora_2 = emisora_2['info_historica']['rendimientos']
-		rend_emisora_2 = {int(k):float(v) for k,v in rend_emisora_2.items() if v is not None}
-		rend_emisora_2 = collections.OrderedDict(sorted(rend_emisora_2.items()))
-		rend_emisora_2 = rend_emisora_2.items()	
-		media_emisora_1 = emisora_1['estadisticas']['rendimientos_media']
-		std_emisora_1 = emisora_1['estadisticas']['rendimientos_std']
-		media_emisora_2 = emisora_2['estadisticas']['rendimientos_media']
-		std_emisora_2 = emisora_2['estadisticas']['rendimientos_std']
-        data = {'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
-        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, data=dumps(data))
+    emisora = Emisora()
+    if not 'emisora' in request.args:
+        emisoras = emisora.todas()
+        return render_template('comparar-seleccion.html', emisoras=emisoras)
+    else:
+        clave_emisora_1 = request.args['emisora']
+        clave_emisora_2 = request.args['emisora2']
+        emisora_1 = emisora.buscar(clave_emisora_1)
+        emisora_2 = emisora.buscar(clave_emisora_2)
+        rend_emisora_1 = emisora_1['info_historica']['rendimientos']
+        rend_emisora_1 = {int(k):float(v) for k,v in rend_emisora_1.items() if v is not None}
+        rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
+        rend_emisora_1 = rend_emisora_1.items()	
+        rend_emisora_2 = emisora_2['info_historica']['rendimientos']
+        rend_emisora_2 = {int(k):float(v) for k,v in rend_emisora_2.items() if v is not None}
+        rend_emisora_2 = collections.OrderedDict(sorted(rend_emisora_2.items()))
+        rend_emisora_2 = rend_emisora_2.items()	
+        media_emisora_1 = emisora_1['estadisticas']['rendimientos_media']
+        std_emisora_1 = emisora_1['estadisticas']['rendimientos_std']
+        media_emisora_2 = emisora_2['estadisticas']['rendimientos_media']
+        std_emisora_2 = emisora_2['estadisticas']['rendimientos_std']
+        precios_emisora_1 = emisora_1['info_historica']['adj_close']
+        precios_emisora_1 = {int(k):float(v) for k,v in precios_emisora_1.items() if v is not None}
+        precios_emisora_1 = collections.OrderedDict(sorted(precios_emisora_1.items()))
+        precios_emisora_1 = precios_emisora_1.items()	
+        precios_emisora_2 = emisora_2['info_historica']['adj_close']
+        precios_emisora_2 = {int(k):float(v) for k,v in precios_emisora_2.items() if v is not None}
+        precios_emisora_2 = collections.OrderedDict(sorted(precios_emisora_2.items()))
+        precios_emisora_2 = precios_emisora_2.items()	
+        serie_precios_1 = pd.Series(emisora_1['info_historica']['adj_close'])
+        serie_precios_2 = pd.Series(emisora_2['info_historica']['adj_close'])
+        covarianza_precio = serie_precios_1.cov(serie_precios_2)
+        serie_rendimientos_1 = pd.Series(emisora_1['info_historica']['rendimientos'])
+        serie_rendimientos_2 = pd.Series(emisora_2['info_historica']['rendimientos'])
+        covarianza_rendimiento = serie_rendimientos_1.cov(serie_rendimientos_2)
+        data = {'precios_emisora_1': precios_emisora_1, 'precios_emisora_2': precios_emisora_2, 'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
+        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, covarianza_precio=covarianza_precio, covarianza_rendimiento=covarianza_rendimiento, data=dumps(data))
 
 if __name__== '__main__':
     app.run(debug=True)
