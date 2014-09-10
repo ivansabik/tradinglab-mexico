@@ -84,7 +84,7 @@ def emisora():
 @app.route('/comparar')
 def comparar():
     emisora = Emisora()
-    if not 'emisora' in request.args:
+    if not ('emisora' and 'emisora') in request.args:
         emisoras = emisora.todas()
         return render_template('comparar-seleccion.html', emisoras=emisoras)
     else:
@@ -114,12 +114,12 @@ def comparar():
         precios_emisora_2 = precios_emisora_2.items()	
         serie_precios_1 = pd.Series(emisora_1['info_historica']['adj_close'])
         serie_precios_2 = pd.Series(emisora_2['info_historica']['adj_close'])
-        covarianza_precio = serie_precios_1.cov(serie_precios_2)
+        corr_precio = serie_precios_1.corr(serie_precios_2)
         serie_rendimientos_1 = pd.Series(emisora_1['info_historica']['rendimientos'])
         serie_rendimientos_2 = pd.Series(emisora_2['info_historica']['rendimientos'])
-        covarianza_rendimiento = serie_rendimientos_1.cov(serie_rendimientos_2)
+        corr_rendimiento = serie_rendimientos_1.corr(serie_rendimientos_2)
         data = {'precios_emisora_1': precios_emisora_1, 'precios_emisora_2': precios_emisora_2, 'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
-        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, covarianza_precio=covarianza_precio, covarianza_rendimiento=covarianza_rendimiento, data=dumps(data))
+        return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, corr_precio=corr_precio, corr_rendimiento=corr_rendimiento, data=dumps(data))
 
 if __name__== '__main__':
     app.run(debug=True)

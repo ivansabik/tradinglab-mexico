@@ -101,7 +101,7 @@
 		"ramo": "Controladoras",
 		"subramo": "Controladoras",
 		"actividad_economica": "CONTROLADORA DE EMPRESAS INDUSTRIALES EN AREAS DIVERSIFICADAS.",
-		"productos_servicios": "PETROQUIMICOS, PLASTICOS, FibraS, ALIMENTOS REFRIGERADOS Y AUTOPARTES DE ALUMINIO",
+		"productos_servicios": "PETROQUIMICOS, PLASTICOS, FIBRAS, ALIMENTOS REFRIGERADOS Y AUTOPARTES DE ALUMINIO",
 		"id_sector": 3
 	},
 	{
@@ -115,8 +115,8 @@
 		"subsector": "Materiales",
 		"ramo": "Productos químicos",
 		"subramo": "Distribución de productos químicos especializados de consumo",
-		"actividad_economica": "CONTROLADORA DE EMPRESAS DEDICADAS A LAS INDUSTRIAS PETROQUIMICAS, PLASTICAS Y FibraS SINTETICAS.",
-		"productos_servicios": "ACIDO TEREFTALICO, DIMETIL TEREFTALATO, CONVERSION DE PRODUCTOS PETROQUIMICOS A POLIMEROS Y FibraS SINTETICAS, GLICOLES, POLIESTIRENO EXPANDIBLE, SOLVENTES Y OTRAS MATERIAS PRIMAS PETROQUIMICAS.",
+		"actividad_economica": "CONTROLADORA DE EMPRESAS DEDICADAS A LAS INDUSTRIAS PETROQUIMICAS, PLASTICAS Y FIBRAS SINTETICAS.",
+		"productos_servicios": "ACIDO TEREFTALICO, DIMETIL TEREFTALATO, CONVERSION DE PRODUCTOS PETROQUIMICOS A POLIMEROS Y FIBRAS SINTETICAS, GLICOLES, POLIESTIRENO EXPANDIBLE, SOLVENTES Y OTRAS MATERIAS PRIMAS PETROQUIMICAS.",
 		"id_sector": 2
 	},
 	{
@@ -623,14 +623,14 @@
 	},
 	{
 		"clave": "FIBRAMQ",
-		"clave_yahoo": "FIBRAMQ.MX",
+		"clave_yahoo": "FIBRAMQ12.MX",
 		"nombre": "Fibra Macquarie (Deutsche Bank)",
 		"logo": "img\/FIBRAMQ.png",
         "id_sector": 11
 	},
 	{
 		"clave": "FIBRAPL",
-		"clave_yahoo": "FIBRAPL.MX",
+		"clave_yahoo": "FIBRAPL14.MX",
 		"nombre": "Fibra Prologis (Deutsche Bank)",
 		"logo": "img\/FIBRAPL.png",
         "id_sector": 11
