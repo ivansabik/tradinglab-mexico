@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tradinglab MX</title>
         <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename = 'css/dashboard.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename = 'css/estilo.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename = 'css/datepicker.css') }}" rel="stylesheet">
     </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -20,8 +21,8 @@
             <button class="btn" type="submit">Buscar</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="{{ url_for('emisoras') }}">Emisoras</a></li>
-            <li><a href="#">Armar portafolio</a></li>
+            <li><a href="{{ url_for('emisoras') }}">Emisoras</a></li>
+            <li><a href="{{ url_for('estrategia') }}">Probar estrategia</a></li>
             <li><a href="{{ url_for('comparar') }}">Comparar emisoras</a></li>
           </ul>
         </div>

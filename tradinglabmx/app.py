@@ -4,6 +4,11 @@ from modelos import Emisora
 import collections
 import time
 import pandas as pd
+from modelos import MovimientoTrading
+from modelos import CompraVenta
+import zipline as zp
+from datetime import datetime
+from dateutil import parser
 
 app = Flask(__name__)
 
@@ -30,11 +35,11 @@ def _filter_fecha_cotizacion(fecha_epoch):
     
 @app.template_filter('indicador')
 def _filter_indicador(valor):
-    return '{0:.4f}'.format(valor)
+    return '{0:.6f}'.format(valor)
     
 @app.template_filter('porcentaje')
 def _filter_porcentaje(valor):
-    return '{0:.4f}'.format(valor*100) + ' %'
+    return '{0:.6f}'.format(valor*100) + ' %'
     
 @app.route('/emisora')
 def emisora():
@@ -120,6 +125,31 @@ def comparar():
         corr_rendimiento = serie_rendimientos_1.corr(serie_rendimientos_2)
         data = {'precios_emisora_1': precios_emisora_1, 'precios_emisora_2': precios_emisora_2, 'rend_emisora_1': rend_emisora_1, 'rend_emisora_2': rend_emisora_2, 'media_emisora_1': media_emisora_1, 'media_emisora_2': media_emisora_2, 'std_emisora_1': std_emisora_1, 'std_emisora_2':std_emisora_2}
         return render_template('comparar-resultados.html', emisora_1=emisora_1, emisora_2=emisora_2, corr_precio=corr_precio, corr_rendimiento=corr_rendimiento, data=dumps(data))
+
+@app.route('/estrategia', methods=['GET', 'POST'])
+def estrategia():
+	if request.method != 'POST':
+		emisora = Emisora()
+		emisoras = emisora.todas()
+		return render_template('estrategia-seleccion.html', emisoras=emisoras)
+	else:
+		movimientos = []
+		for movimiento in range(1,11):
+			clave_emisora = request.form.get('emisora'+str(movimiento), None)
+			fecha = request.form.get('fecha'+str(movimiento), None)
+			num_acciones = float(request.form.get('numacc'+str(movimiento), None))
+			if clave_emisora:
+				emisora = Emisora()
+				emisora.buscar(clave_emisora, info_hist=False, formato_json=False)
+				movimiento = MovimientoTrading()
+				movimiento.num_acciones = num_acciones
+				movimiento.emisora = emisora.clave_yahoo
+				movimiento.fecha = parser.parse(fecha)
+				movimientos.append(movimiento)
+        trading = CompraVenta(movimientos)
+        data = trading.data
+        perf = trading.run(data)
+        return render_template('estrategia-resultados.html', port=perf['portfolio_value'], rend=perf['returns'])
 
 if __name__== '__main__':
     app.run(debug=True)

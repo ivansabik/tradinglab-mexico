@@ -1,21 +1,19 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1 class="page-header">Emisoras</h1>
+    <h2>Emisoras</h2>
         {% for emisora in emisoras %}
-            <!--<div class="row">!-->
-             <div class="col-md-4">
-                <a href="{{ url_for('emisora', clave=emisora.clave) }}">
-                    <img class="logo" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename=emisora.logo) }}"/>
-                </a>
-                <h3>{{ emisora.clave }}</h3>
-                <p>{{ emisora.nombre }}</p>
-                <p>
-                    <strong>Sector: </strong><span>{{ emisora.sector }}</span>
-                    </br>
-                    <strong>Subsector: </strong><span>{{ emisora.subsector }}</span>
-                </p>
-                    </div>
-             <!--</div>!-->
+		 <div class="col-md-4">
+			<a href="{{ url_for('emisora', clave=emisora.clave) }}">
+				<img class="logo" alt="{{ emisora.nombre }}" src="{{ url_for('static', filename=emisora.logo) }}"/>
+			</a>
+			<h3>{{ emisora.clave }}</h3>
+			<p>{{ emisora.nombre }}</p>
+			<p>
+				<strong>Sector: </strong><span>{{ emisora.sector }}</span>
+				</br>
+				<strong>Subsector: </strong><span>{{ emisora.subsector }}</span>
+			</p>
+		</div>
         {% endfor %}
 {% endblock %}
 {% block js %}

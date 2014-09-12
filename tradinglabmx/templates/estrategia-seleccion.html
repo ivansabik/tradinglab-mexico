@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Probar estrategia</h2>
+<p>Escoge emisoras, la fecha del movimiento y el número de acciones (con signo negativo para vender). Ej. 100 equivale a comprar 100 acciones, -100 equivale a vender 100 acciones</p>
+<form role="form" method="post" action="{{ url_for('estrategia') }}">
+	{% for movimiento in range(1,11) %}
+	<h4>Movimiento {{ movimiento }}</h4>
+	<div class="form-group">
+		<label>Fecha de movimiento</label><input type="text" class="fecha form-control" value="02/02/13" data-date-format="dd/mm/yy" name="fecha{{movimiento}}">
+		<label>Emisora</label>
+		<select class="form-control" name="emisora{{movimiento}}">
+			<option value=""></option>
+			{% for emisora in emisoras %}
+			<option value="{{ emisora.clave }}">{{ emisora.clave }} - {{ emisora.nombre }}</option>
+			{% endfor %}
+		</select>
+		<label>Núm. de acciones</label><input type="number" class="form-control" value="0" name="numacc{{movimiento}}"/>
+	</div>
+	{% endfor %}
+	<button class="btn btn-primary btn-lg" type="submit">Simular resultados</button>
+</form>
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static', filename = 'js/bootstrap-datepicker.js') }}"></script>
+    <script>
+        $(function() {
+            $('.fecha').datepicker();
+        });
+	</script>
+{% endblock %}
+
+    

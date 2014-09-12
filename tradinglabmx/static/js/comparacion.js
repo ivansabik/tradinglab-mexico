@@ -45,7 +45,7 @@ $(document).ready(function() {
             zoomType: 'xy'
         },
         title: {
-            text: 'Rendimiento vs Riesgo'
+            text: ''
         },
         xAxis: {
             title: {
