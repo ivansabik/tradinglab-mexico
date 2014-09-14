@@ -1,3 +1,4 @@
+import os
 import json
 import datetime
 import pandas as pd
@@ -7,7 +8,7 @@ import zipline as zp
 # Emisora
 class Emisora:
     def buscar(self, clave, fecha_inicio='', fecha_fin='', info_hist=True, formato_json=True):
-        json_data = open('emisoras.json')
+        json_data = open('/var/www/tradinglabmx/tradinglabmx/emisoras.json')
         emisoras_json = json.load(json_data)
         for emisora_json in emisoras_json:
             clave_json  = emisora_json.get('clave', '')
@@ -48,12 +49,12 @@ class Emisora:
         return {'error': 'No existe ninguna emisora con esa clave'}
         
     def todas(self):
-        json_data = open('emisoras.json')
+        json_data = open('/var/www/tradinglabmx/tradinglabmx/emisoras.json')
         emisoras_json = json.load(json_data)
         return emisoras_json
         
     def sector(self, id_sector):
-        json_data = open('emisoras.json')
+        json_data = open('/var/www/tradinglabmx/tradinglabmx/emisoras.json')
         emisoras_json = json.load(json_data)
         emisoras_sector = []
         for emisora_json in emisoras_json:
