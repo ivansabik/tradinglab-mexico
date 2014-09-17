@@ -1,5 +1,10 @@
 $(document).ready(function() {
-    $('#precios').dataTable();
+    $('#precios').dataTable( {
+        "dom": 'T<"clear">lfrtip',
+        "tableTools": {
+            "sSwfPath": "/static/swf/copy_csv_xls_pdf.swf"
+        }
+    } );
     $('#grafica').highcharts('StockChart', {
         rangeSelector: {
             selected: 1,

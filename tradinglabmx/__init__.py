@@ -8,7 +8,6 @@ from modelos import MovimientoTrading
 from modelos import CompraVenta
 import zipline as zp
 from datetime import datetime
-from dateutil import parser
 
 app = Flask(__name__)
 
@@ -39,7 +38,11 @@ def _filter_indicador(valor):
     
 @app.template_filter('porcentaje')
 def _filter_porcentaje(valor):
-    return '{0:.6f}'.format(valor*100) + ' %'
+    return '{0:.6f}'.format(valor * 100) + ' %'
+    
+@app.template_filter('entero')
+def _filter_porcentaje(valor):
+    return '{0:,.0f}'.format(valor)
     
 @app.route('/emisora')
 def emisora():
@@ -50,34 +53,13 @@ def emisora():
         if not emisora.get('error'):
             # TODO: conversion en funcion, se usa 8 veces
             # Convierte keys a ints (numeros), ordenados para highcharts
-            cierre_aj = emisora['info_historica']['adj_close']
-            cierre_aj = {int(k):float(v) for k,v in cierre_aj.items()}
-            cierre_aj = collections.OrderedDict(sorted(cierre_aj.items()))
-            cierre_aj = cierre_aj.items()
-            volumen = emisora['info_historica']['volume']
-            volumen = {int(k):float(v) for k,v in volumen.items()}
-            volumen = collections.OrderedDict(sorted(volumen.items()))
-            volumen = volumen.items()
-            mavg5 = emisora['info_historica']['mavg5']
-            mavg5 = {int(k):float(v) for k,v in mavg5.items()}
-            mavg5 = collections.OrderedDict(sorted(mavg5.items()))
-            mavg5 = mavg5.items()
-            mavg10 = emisora['info_historica']['mavg10']
-            mavg10 = {int(k):float(v) for k,v in mavg10.items()}
-            mavg10 = collections.OrderedDict(sorted(mavg10.items()))
-            mavg10 = mavg10.items()
-            mavg20 = emisora['info_historica']['mavg20']
-            mavg20 = {int(k):float(v) for k,v in mavg20.items()}
-            mavg20 = collections.OrderedDict(sorted(mavg20.items()))
-            mavg20 = mavg20.items()
-            mavg50 = emisora['info_historica']['mavg50']
-            mavg50 = {int(k):float(v) for k,v in mavg50.items()}
-            mavg50 = collections.OrderedDict(sorted(mavg50.items()))
-            mavg50 = mavg50.items()
-            mavg200 = emisora['info_historica']['mavg50']
-            mavg200 = {int(k):float(v) for k,v in mavg200.items()}
-            mavg200 = collections.OrderedDict(sorted(mavg200.items()))
-            mavg200 = mavg200.items()
+            cierre_aj = _ordena_keys(emisora['info_historica']['adj_close'])
+            volumen = _ordena_keys(emisora['info_historica']['volume'])
+            mavg5 = _ordena_keys(emisora['info_historica']['mavg5'])
+            mavg10 = _ordena_keys(emisora['info_historica']['mavg10'])
+            mavg20 = _ordena_keys(emisora['info_historica']['mavg20'])
+            mavg50 = _ordena_keys(emisora['info_historica']['mavg50'])
+            mavg200 = _ordena_keys(emisora['info_historica']['mavg50'])
             data = {'cierre_aj': cierre_aj, 'volumen': volumen, 'mavg5': mavg5, 'mavg10': mavg10, 'mavg20': mavg20, 'mavg50': mavg50, 'mavg200': mavg200}
             return render_template('emisora.html', emisora=emisora, data=dumps(data))
         else:
@@ -97,26 +79,14 @@ def comparar():
         clave_emisora_2 = request.args['emisora2']
         emisora_1 = emisora.buscar(clave_emisora_1)
         emisora_2 = emisora.buscar(clave_emisora_2)
-        rend_emisora_1 = emisora_1['info_historica']['rendimientos']
-        rend_emisora_1 = {int(k):float(v) for k,v in rend_emisora_1.items() if v is not None}
-        rend_emisora_1 = collections.OrderedDict(sorted(rend_emisora_1.items()))
-        rend_emisora_1 = rend_emisora_1.items()	
-        rend_emisora_2 = emisora_2['info_historica']['rendimientos']
-        rend_emisora_2 = {int(k):float(v) for k,v in rend_emisora_2.items() if v is not None}
-        rend_emisora_2 = collections.OrderedDict(sorted(rend_emisora_2.items()))
-        rend_emisora_2 = rend_emisora_2.items()	
+        rend_emisora_1 = _ordena_keys(emisora_1['info_historica']['rendimientos'])
+        rend_emisora_2 = _ordena_keys(emisora_2['info_historica']['rendimientos'])
         media_emisora_1 = emisora_1['estadisticas']['rendimientos_media']
         std_emisora_1 = emisora_1['estadisticas']['rendimientos_std']
         media_emisora_2 = emisora_2['estadisticas']['rendimientos_media']
         std_emisora_2 = emisora_2['estadisticas']['rendimientos_std']
-        precios_emisora_1 = emisora_1['info_historica']['adj_close']
-        precios_emisora_1 = {int(k):float(v) for k,v in precios_emisora_1.items() if v is not None}
-        precios_emisora_1 = collections.OrderedDict(sorted(precios_emisora_1.items()))
-        precios_emisora_1 = precios_emisora_1.items()	
-        precios_emisora_2 = emisora_2['info_historica']['adj_close']
-        precios_emisora_2 = {int(k):float(v) for k,v in precios_emisora_2.items() if v is not None}
-        precios_emisora_2 = collections.OrderedDict(sorted(precios_emisora_2.items()))
-        precios_emisora_2 = precios_emisora_2.items()	
+        precios_emisora_1 = _ordena_keys(emisora_1['info_historica']['adj_close'])
+        precios_emisora_2 = _ordena_keys(emisora_2['info_historica']['adj_close'])
         serie_precios_1 = pd.Series(emisora_1['info_historica']['adj_close'])
         serie_precios_2 = pd.Series(emisora_2['info_historica']['adj_close'])
         corr_precio = serie_precios_1.corr(serie_precios_2)
@@ -144,12 +114,20 @@ def estrategia():
 				movimiento = MovimientoTrading()
 				movimiento.num_acciones = num_acciones
 				movimiento.emisora = emisora.clave_yahoo
-				movimiento.fecha = parser.parse(fecha)
+				movimiento.fecha = datetime.strptime(fecha, '%d/%m/%y')
 				movimientos.append(movimiento)
         trading = CompraVenta(movimientos)
         data = trading.data
         perf = trading.run(data)
-        return render_template('estrategia-resultados.html', port=perf['portfolio_value'], rend=perf['returns'])
+        perf['returns_cum'] = perf['returns'].cumsum()
+        perf['pnl_cum'] = perf['pnl'].cumsum()
+        return render_template('estrategia-resultados.html', perf=perf.to_dict())
+
+def _ordena_keys(columna):
+    columna = {int(k):float(v) for k,v in columna.items()}
+    columna = collections.OrderedDict(sorted(columna.items()))
+    columna = columna.items()
+    return columna
 
 if __name__== '__main__':
     app.run(debug=True)

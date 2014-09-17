@@ -22,11 +22,11 @@
 		<tbody>
 			<tr>
 				<td>Precio alto</td>
-				<td>{{ emisora.estadisticas.precio_alto | indicador }}</td>
+				<td>{{ emisora.estadisticas.precio_alto }}</td>
 			</tr>
 			<tr>
 				<td>Precio bajo</td>
-				<td>{{ emisora.estadisticas.precio_bajo | indicador }}</td>
+				<td>{{ emisora.estadisticas.precio_bajo }}</td>
 			</tr>
 			<tr>
 				<td>Precio promedio</td>
@@ -52,20 +52,35 @@
         <thead>
             <tr>
                 <th>Fecha (mm-dd-aaaa)</th>
+                <th>Apertura</th>
+                <th>Cierre</th>
+                <th>Alto</th>
+                <th>Bajo</th>
                 <th>Cierre ajustado</th>
+                <th>Volumen</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Fecha</th>
+                <th>Fecha (mm-dd-aaaa)</th>
+                <th>Apertura</th>
+                <th>Cierre</th>
+                <th>Alto</th>
+                <th>Bajo</th>
                 <th>Cierre ajustado</th>
+                <th>Volumen</th>
             </tr>
         </tfoot>
         <tbody>
-            {% for key, value in emisora.info_historica.adj_close.iteritems() %}
+            {% for i in emisora.info_historica.adj_close.keys() %}
             <tr>
-                <td>{{ key|fecha_cotizacion }}</td>
-                <td>{{ value }}</td>
+                <td>{{ i | fecha_cotizacion }}</td>
+                <td>{{ emisora.info_historica.open[i] }}</td>
+                <td>{{ emisora.info_historica.close[i] }}</td>
+                <td>{{ emisora.info_historica.high[i] }}</td>
+                <td>{{ emisora.info_historica.low[i] }}</td>
+                <td>{{ emisora.info_historica.adj_close[i] }}</td>
+                <td>{{ emisora.info_historica.volume[i] | entero}}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -73,6 +88,7 @@
 {% endblock %}
 {% block js %}
     <script src="{{ url_for('static', filename = 'js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/dataTables.tableTools.min.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/dataTables.bootstrap.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/highstock.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/exporting.js') }}"></script>
