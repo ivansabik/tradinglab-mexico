@@ -8,7 +8,7 @@ import zipline as zp
 # Emisora
 class Emisora:
     def __init__(self):
-        path_json_emisoras = os.path.abspath('./emisoras.json')
+        path_json_emisoras = './emisoras.json'
         self.json_data = open(path_json_emisoras)
         print self.json_data
         

@@ -41,7 +41,7 @@ def _filter_porcentaje(valor):
     return '{0:.6f}'.format(valor * 100) + ' %'
     
 @app.template_filter('entero')
-def _filter_porcentaje(valor):
+def _filter_entero(valor):
     return '{0:,.0f}'.format(valor)
     
 @app.route('/emisora')
