@@ -8,13 +8,12 @@ import zipline as zp
 # Emisora
 class Emisora:
     def __init__(self):
-        path_json_emisoras = './emisoras.json'
-        self.json_data = open(path_json_emisoras)
-        print self.json_data
+        path_json_emisoras = 'emisoras.json'
+        json_data = open(path_json_emisoras)
+        self.emisoras_json = json.load(json_data)
         
     def buscar(self, clave, fecha_inicio='', fecha_fin='', info_hist=True, formato_json=True):
-        emisoras_json = json.load(self.json_data)
-        for emisora_json in emisoras_json:
+        for emisora_json in self.emisoras_json:
             clave_json  = emisora_json.get('clave', '')
             clave_yahoo  = emisora_json.get('clave_yahoo', '')
             if clave.upper() == clave_json:
@@ -28,6 +27,7 @@ class Emisora:
                         datos.rename(columns={'Volume': 'volume'}, inplace=True)
                         datos.rename(columns={'Adj Close': 'adj_close'}, inplace=True)
                         datos['rendimientos'] = datos['adj_close'].pct_change()
+                        datos.fillna(method='backfill', inplace=True)
                         datos['mavg5'] = pd.ewma(datos['adj_close'], 5)
                         datos['mavg10'] = pd.ewma(datos['adj_close'], 10)
                         datos['mavg20'] = pd.ewma(datos['adj_close'], 20)
@@ -53,13 +53,11 @@ class Emisora:
         return {'error': 'No existe ninguna emisora con esa clave'}
         
     def todas(self):
-        emisoras_json = json.load(self.json_data)
-        return emisoras_json
+        return self.emisoras_json
         
     def sector(self, id_sector):
-        emisoras_json = json.load(self.json_data)
         emisoras_sector = []
-        for emisora_json in emisoras_json:
+        for emisora_json in self.emisoras_json:
             id_sector_json  = emisora_json.get('id_sector', '')
             if int(id_sector) == id_sector_json:
                 emisoras_sector.append(emisora_json)

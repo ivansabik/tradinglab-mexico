@@ -8,6 +8,7 @@ from modelos import MovimientoTrading
 from modelos import CompraVenta
 import zipline as zp
 from datetime import datetime
+import pprint
 
 app = Flask(__name__)
 
@@ -79,6 +80,8 @@ def comparar():
         clave_emisora_2 = request.args['emisora2']
         emisora_1 = emisora.buscar(clave_emisora_1)
         emisora_2 = emisora.buscar(clave_emisora_2)
+        print emisora_1['nombre']
+        print emisora_2['nombre']
         rend_emisora_1 = _ordena_keys(emisora_1['info_historica']['rendimientos'])
         rend_emisora_2 = _ordena_keys(emisora_2['info_historica']['rendimientos'])
         media_emisora_1 = emisora_1['estadisticas']['rendimientos_media']
