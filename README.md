@@ -17,30 +17,23 @@ Como tecnologías usa Python, Flask, Zipline, Pandas, Bootstrap y Highcharts JS,
 La aplicación web están en Python con el framework Flask. Requiere como dependencias Flask y Zipline, abajo vienen las instrucciones con Ubuntu y el link a un disco con el que se puede crear una máquina virtual en VMWare o Virtualbox.
 
 ```cd tradinglabmx```
-
 ```python tradinglabmx/app.py```
 
-Esto inicia un server para pruebas en la dirección ```127.0.0.1:5000```
+Esto inicia un server de desarrollo (no apto para producción) en la dirección ```127.0.0.1:5000```
 
 ## API Rest
 
 Por el momento no se usa AJAX, se genera directamente el código Javascript en el lado del server usando templates de Jinja2. Aún así se ha ido desarrollando una API para cuando se reimplemente en AJAX o para que se hagan otras apps con ésta.
 
 ```cd tradinglabmx```
-
 ```python tradinglabmx/api.py```
 
-## Instrucciones deploy
-#### Con VM a partir del disco
-#### Manualmente en Ubuntu
+## Instrucciones instalación (Ubuntu)
 
-```wget http://repo.continuum.io/archive/Anaconda-2.0.0-Linux-x86.sh```
+Usar virtualenv de Python es mejor, pero para simplificar vamos a instalar globalmente:
 
-
-```sudo apt-get install python-pip python-all-dev```
-
-```sudo pip install numpy```
-
-```sudo pip install zipline```
-
-```sudo pip install flask```
+```cd ~```
+```sudo apt-get install git python python-pip python-all-dev```
+```sudo pip install numpy zipline flask```
+```git clone https://github.com/mandroslabs/tradinglab-mexico.git```
+```python tradinglab-mexico/tradinglabmx/app.py```
