@@ -1,25 +1,27 @@
-import os
-import json
 import datetime
-import pandas as pd
-import pandas.io.data
-import zipline as zp
+import json
 
-# Emisora
+import pandas as pd
+from zipline.algorithm import TradingAlgorithm
+from zipline.utils.factory import load_from_yahoo
+
+
+#  Emisora
 class Emisora:
     def __init__(self):
         path_json_emisoras = 'emisoras.json'
         json_data = open(path_json_emisoras)
         self.emisoras_json = json.load(json_data)
-        
+
     def buscar(self, clave, fecha_inicio='', fecha_fin='', info_hist=True, formato_json=True):
         for emisora_json in self.emisoras_json:
-            clave_json  = emisora_json.get('clave', '')
-            clave_yahoo  = emisora_json.get('clave_yahoo', '')
+            clave_json = emisora_json.get('clave', '')
+            clave_yahoo = emisora_json.get('clave_yahoo', '')
             if clave.upper() == clave_json:
                 if info_hist:
                     if clave_yahoo != '':
-                        datos = pd.io.data.get_data_yahoo(clave_yahoo, start = datetime.datetime(1990, 1, 1))
+                        datos = pd.io.data.get_data_yahoo(clave_yahoo,
+                                                          start=datetime.datetime(1990, 1, 1))
                         datos.rename(columns={'Open': 'open'}, inplace=True)
                         datos.rename(columns={'High': 'high'}, inplace=True)
                         datos.rename(columns={'Low': 'low'}, inplace=True)
@@ -43,25 +45,28 @@ class Emisora:
                         emisora_json['estadisticas']['precio_media'] = datos['close'].mean()
                         emisora_json['estadisticas']['precio_std'] = datos['close'].std()
                     else:
-						emisora_json['info_historica'] = {'open': {}, 'high': {}, 'low': {}, 'close': {}, 'volume': {}, 'adj_close': {}}
+                        emisora_json['info_historica'] = {'open': {}, 'high': {}, 'low': {},
+                                                          'close': {}, 'volume': {},
+                                                          'adj_close': {}}
                 if formato_json:
-					return emisora_json
+                    return emisora_json
                 else:
                     self.clave = clave_json
                     self.clave_yahoo = clave_yahoo
                     return self
         return {'error': 'No existe ninguna emisora con esa clave'}
-        
+
     def todas(self):
         return self.emisoras_json
-        
+
     def sector(self, id_sector):
         emisoras_sector = []
         for emisora_json in self.emisoras_json:
-            id_sector_json  = emisora_json.get('id_sector', '')
+            id_sector_json = emisora_json.get('id_sector', '')
             if int(id_sector) == id_sector_json:
                 emisoras_sector.append(emisora_json)
         return emisoras_sector
+
 
 # Movimiento de trading
 class MovimientoTrading:
@@ -69,8 +74,9 @@ class MovimientoTrading:
     emisora = ''
     fecha = ''
 
+
 # Algoritmo compra/venta muchos movimientos
-class CompraVenta(zp.TradingAlgorithm):   
+class CompraVenta(TradingAlgorithm):
     def initialize(self, movimientos):
         self.movimientos = movimientos
         fechas = []
@@ -80,7 +86,7 @@ class CompraVenta(zp.TradingAlgorithm):
             emisoras.add(movimiento.emisora)
         emisoras = list(emisoras)
         fecha_inicio = min(fechas)
-        self.data = zp.utils.factory.load_from_yahoo(stocks=emisoras, indexes={}, start=fecha_inicio, adjusted=False)    
+        self.data = load_from_yahoo(stocks=emisoras, indexes={}, start=fecha_inicio, adjusted=False)
 
     def handle_data(self, data):
         for movimiento in self.movimientos:
