@@ -147,4 +147,4 @@ def _ordena_keys(columna):
     return columna
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0', debug=True)

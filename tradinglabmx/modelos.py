@@ -38,8 +38,9 @@ class Emisora:
                         datos_json = json.loads(datos.to_json())
                         emisora_json['info_historica'] = datos_json
                         emisora_json['estadisticas'] = {}
-                        emisora_json['estadisticas']['rendimientos_media'] = datos['rendimientos'].mean()
-                        emisora_json['estadisticas']['rendimientos_std'] = datos['rendimientos'].std()
+                        rendimientos = datos['rendimientos']
+                        emisora_json['estadisticas']['rendimientos_media'] = rendimientos.mean()
+                        emisora_json['estadisticas']['rendimientos_std'] = rendimientos.std()
                         emisora_json['estadisticas']['precio_alto'] = datos['close'].max()
                         emisora_json['estadisticas']['precio_bajo'] = datos['close'].min()
                         emisora_json['estadisticas']['precio_media'] = datos['close'].mean()
