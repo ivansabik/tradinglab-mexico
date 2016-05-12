@@ -3,6 +3,7 @@ import json
 
 import pandas as pd
 from zipline.algorithm import TradingAlgorithm
+from zipline.api import order, symbol
 from zipline.utils.factory import load_from_yahoo
 
 
@@ -77,8 +78,8 @@ class MovimientoTrading:
 
 
 # Algoritmo compra/venta muchos movimientos
-class CompraVenta(TradingAlgorithm):
-    def initialize(self, movimientos):
+class CompraVenta():
+    def __init__(self, movimientos):
         self.movimientos = movimientos
         fechas = []
         emisoras = set()
@@ -89,12 +90,20 @@ class CompraVenta(TradingAlgorithm):
         fecha_inicio = min(fechas)
         self.data = load_from_yahoo(stocks=emisoras, indexes={}, start=fecha_inicio, adjusted=False)
 
-    def handle_data(self, data):
-        for movimiento in self.movimientos:
+    def _initialize(self, context, movimientos):
+        context.movimientos = movimientos
+
+    def _handle_data(self, context, data):
+        for movimiento in context.movimientos:
             clave_emisora = movimiento.emisora
             fecha_movimiento = movimiento.fecha
-            fecha = data[clave_emisora].dt
+            fecha = data[symbol(clave_emisora)].dt
             delta = fecha_movimiento - fecha.replace(tzinfo=None)
             num_acciones = movimiento.num_acciones
             if(delta.days == 0):
-                self.order(clave_emisora, num_acciones)
+                order(symbol(clave_emisora), num_acciones)
+
+    def run(self):
+        algo_obj = TradingAlgorithm(initialize=self._initialize, handle_data=self._handle_data,
+                                    movimientos=self.movimientos)
+        return algo_obj.run(self.data)
