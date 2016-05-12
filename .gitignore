@@ -1,6 +1,7 @@
 *~
 scrape-emisoras/vendor/
 composer.lock
+.DS_STORE
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -55,4 +56,3 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
-
